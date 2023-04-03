@@ -11,24 +11,41 @@ import ComposableArchitecture
 class HomeCore: ReducerProtocol {
     struct State: Equatable {
         var accessToken: String = ""
+
+        @BindingState
+        var showToolbar: Bool = false
     }
 
-    enum Action {
+    enum Action: BindableAction {
         case logout
+        case showToolbar
         case none
+        case binding(BindingAction<State>)
     }
 
-    func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        switch action {
-        case .logout:
+    var body: some ReducerProtocol<State, Action> {
+        BindingReducer()
 
-            UserDefaults.standard.removeObject(forKey: "accessToken")
-            UserDefaults.standard.synchronize()
+        Reduce { state, action in
+            switch action {
+            case .logout:
 
-            return .none
+                UserDefaults.standard.removeObject(forKey: "accessToken")
+                UserDefaults.standard.synchronize()
 
-        case .none:
-            return .none
+                return .none
+
+            case .showToolbar:
+                state.showToolbar.toggle()
+
+                return .none
+
+            case .none:
+                return .none
+
+            case .binding:
+                return .none
+            }
         }
     }
 }

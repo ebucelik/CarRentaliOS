@@ -36,13 +36,13 @@ class ViewController: UIViewController {
         setupConstraints()
     }
 
-    func setupSubViews() {
+    private func setupSubViews() {
         appView.view.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(appView.view)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate(
             [
                 appView.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),

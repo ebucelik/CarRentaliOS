@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import SFSafeSymbols
 
 struct HomeView: View {
 
@@ -17,26 +18,45 @@ struct HomeView: View {
             TabView {
                 Text("Cars")
                     .tabItem {
-                        Label("Cars", systemImage: "car.fill")
+                        Label("Cars", systemSymbol: .carFill)
                     }
 
                 Text("Rentals")
                     .tabItem {
-                        Label("Rentals", systemImage: "square.and.arrow.down.fill")
+                        Label("Rentals", systemSymbol: .squareAndArrowDownFill)
                     }
+
+                ViewControllerRepresentable(
+                    viewController: GoogleMapsViewController()
+                )
+                .tabItem {
+                    Label("Map", systemSymbol: .mapFill)
+                }
+                .edgesIgnoringSafeArea(.all)
 
                 Text("Account")
                     .tabItem {
-                        Label("Account", systemImage: "person.fill")
+                        Label("Account", systemSymbol: .personFill)
                     }
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Image(systemName: "rectangle.portrait.and.arrow.forward.fill")
-                                .onTapGesture {
-                                    viewStore.send(.logout)
-                                }
-                        }
+                    .onAppear {
+                        viewStore.send(.showToolbar)
                     }
+                    .onDisappear {
+                        viewStore.send(.showToolbar)
+                    }
+            }
+            .toolbar {
+                if viewStore.showToolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Image(systemSymbol: .rectanglePortraitAndArrowForwardFill)
+                            .onTapGesture {
+                                viewStore.send(.logout)
+                            }
+                    }
+                }
+            }
+            .onAppear {
+                UITabBar.appearance().backgroundColor = .white
             }
         }
     }
