@@ -13,14 +13,14 @@ class GoogleMapsViewController: UIViewController {
 
     let camera: GMSCameraPosition
     var mapView: GMSMapView
-    let latitude = -33.86
-    let longitude = 151.20
+    let latitude = 48.158031
+    let longitude = 16.382370
 
     init() {
         self.camera = GMSCameraPosition(
             latitude: latitude,
             longitude: longitude,
-            zoom: 6.0
+            zoom: 15.0
         )
         self.mapView = GMSMapView()
 
@@ -50,8 +50,8 @@ class GoogleMapsViewController: UIViewController {
             latitude: latitude,
             longitude: longitude
         )
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
+        marker.title = "FH Campus"
+        marker.snippet = "Vienna, Austria"
         marker.map = mapView
     }
 }
