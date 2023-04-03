@@ -15,26 +15,26 @@
 		7122E17129DB41C6002E1D4C /* CarRentaliOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17029DB41C6002E1D4C /* CarRentaliOSTests.swift */; };
 		7122E17B29DB41C6002E1D4C /* CarRentaliOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */; };
 		7122E17D29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */; };
-		7122E1B229DB4229002E1D4C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E18C29DB4229002E1D4C /* String+Extensions.swift */; };
-		7122E1B329DB4229002E1D4C /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E18E29DB4229002E1D4C /* AppColor.swift */; };
-		7122E1B429DB4229002E1D4C /* SharedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E19029DB4229002E1D4C /* SharedTextView.swift */; };
-		7122E1B529DB4229002E1D4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E19329DB4229002E1D4C /* APIClient.swift */; };
-		7122E1B629DB4229002E1D4C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E19429DB4229002E1D4C /* HTTPMethod.swift */; };
-		7122E1B729DB4229002E1D4C /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E19529DB4229002E1D4C /* HTTPError.swift */; };
-		7122E1B829DB422A002E1D4C /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E19629DB4229002E1D4C /* Call.swift */; };
-		7122E1B929DB422A002E1D4C /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E19F29DB4229002E1D4C /* HomeCore.swift */; };
-		7122E1BA29DB422A002E1D4C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1A129DB4229002E1D4C /* HomeView.swift */; };
-		7122E1BB29DB422A002E1D4C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1A429DB4229002E1D4C /* AppView.swift */; };
-		7122E1BC29DB422A002E1D4C /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1A529DB4229002E1D4C /* AppCore.swift */; };
-		7122E1BD29DB422A002E1D4C /* EntryCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1A829DB4229002E1D4C /* EntryCore.swift */; };
-		7122E1BE29DB422A002E1D4C /* RegisterCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1A929DB4229002E1D4C /* RegisterCore.swift */; };
-		7122E1BF29DB422A002E1D4C /* LoginCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1AA29DB4229002E1D4C /* LoginCore.swift */; };
-		7122E1C029DB422A002E1D4C /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1AC29DB4229002E1D4C /* Customer.swift */; };
-		7122E1C129DB422A002E1D4C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1AE29DB4229002E1D4C /* LoginView.swift */; };
-		7122E1C229DB422A002E1D4C /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1AF29DB4229002E1D4C /* EntryView.swift */; };
-		7122E1C329DB422A002E1D4C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E1B029DB4229002E1D4C /* RegisterView.swift */; };
 		7122E1C629DB436C002E1D4C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7122E1C529DB436C002E1D4C /* ComposableArchitecture */; };
 		7122E1C929DB4392002E1D4C /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 7122E1C829DB4392002E1D4C /* SFSafeSymbols */; };
+		71A4D32E29DB567600BB4202 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D30629DB567600BB4202 /* APIClient.swift */; };
+		71A4D32F29DB567600BB4202 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D30729DB567600BB4202 /* HTTPMethod.swift */; };
+		71A4D33029DB567600BB4202 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D30829DB567600BB4202 /* HTTPError.swift */; };
+		71A4D33129DB567600BB4202 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D30929DB567600BB4202 /* Call.swift */; };
+		71A4D33229DB567600BB4202 /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D31229DB567600BB4202 /* HomeCore.swift */; };
+		71A4D33329DB567600BB4202 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D31429DB567600BB4202 /* HomeView.swift */; };
+		71A4D33429DB567600BB4202 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D31729DB567600BB4202 /* AppView.swift */; };
+		71A4D33529DB567600BB4202 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D31829DB567600BB4202 /* AppCore.swift */; };
+		71A4D33629DB567600BB4202 /* EntryCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D31B29DB567600BB4202 /* EntryCore.swift */; };
+		71A4D33729DB567600BB4202 /* RegisterCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D31C29DB567600BB4202 /* RegisterCore.swift */; };
+		71A4D33829DB567600BB4202 /* LoginCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D31D29DB567600BB4202 /* LoginCore.swift */; };
+		71A4D33929DB567600BB4202 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D31F29DB567600BB4202 /* Customer.swift */; };
+		71A4D33A29DB567600BB4202 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D32129DB567600BB4202 /* LoginView.swift */; };
+		71A4D33B29DB567600BB4202 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D32229DB567600BB4202 /* EntryView.swift */; };
+		71A4D33C29DB567600BB4202 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D32329DB567600BB4202 /* RegisterView.swift */; };
+		71A4D33D29DB567600BB4202 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D32829DB567600BB4202 /* String+Extensions.swift */; };
+		71A4D33E29DB567600BB4202 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D32A29DB567600BB4202 /* AppColor.swift */; };
+		71A4D33F29DB567600BB4202 /* SharedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D32C29DB567600BB4202 /* SharedTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,24 +67,24 @@
 		7122E17629DB41C6002E1D4C /* CarRentaliOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentaliOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITests.swift; sourceTree = "<group>"; };
 		7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		7122E18C29DB4229002E1D4C /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		7122E18E29DB4229002E1D4C /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		7122E19029DB4229002E1D4C /* SharedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTextView.swift; sourceTree = "<group>"; };
-		7122E19329DB4229002E1D4C /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		7122E19429DB4229002E1D4C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		7122E19529DB4229002E1D4C /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
-		7122E19629DB4229002E1D4C /* Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
-		7122E19F29DB4229002E1D4C /* HomeCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
-		7122E1A129DB4229002E1D4C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		7122E1A429DB4229002E1D4C /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		7122E1A529DB4229002E1D4C /* AppCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
-		7122E1A829DB4229002E1D4C /* EntryCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCore.swift; sourceTree = "<group>"; };
-		7122E1A929DB4229002E1D4C /* RegisterCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCore.swift; sourceTree = "<group>"; };
-		7122E1AA29DB4229002E1D4C /* LoginCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCore.swift; sourceTree = "<group>"; };
-		7122E1AC29DB4229002E1D4C /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
-		7122E1AE29DB4229002E1D4C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		7122E1AF29DB4229002E1D4C /* EntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
-		7122E1B029DB4229002E1D4C /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		71A4D30629DB567600BB4202 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		71A4D30729DB567600BB4202 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		71A4D30829DB567600BB4202 /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		71A4D30929DB567600BB4202 /* Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
+		71A4D31229DB567600BB4202 /* HomeCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
+		71A4D31429DB567600BB4202 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		71A4D31729DB567600BB4202 /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		71A4D31829DB567600BB4202 /* AppCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
+		71A4D31B29DB567600BB4202 /* EntryCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCore.swift; sourceTree = "<group>"; };
+		71A4D31C29DB567600BB4202 /* RegisterCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCore.swift; sourceTree = "<group>"; };
+		71A4D31D29DB567600BB4202 /* LoginCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCore.swift; sourceTree = "<group>"; };
+		71A4D31F29DB567600BB4202 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		71A4D32129DB567600BB4202 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		71A4D32229DB567600BB4202 /* EntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		71A4D32329DB567600BB4202 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		71A4D32829DB567600BB4202 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		71A4D32A29DB567600BB4202 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		71A4D32C29DB567600BB4202 /* SharedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +140,9 @@
 				7122E15929DB41C5002E1D4C /* AppDelegate.swift */,
 				7122E15B29DB41C5002E1D4C /* SceneDelegate.swift */,
 				7122E15D29DB41C5002E1D4C /* ViewController.swift */,
-				7122E19729DB4229002E1D4C /* Features */,
-				7122E19229DB4229002E1D4C /* Network */,
-				7122E18929DB4229002E1D4C /* Shared */,
+				71A4D30A29DB567600BB4202 /* Features */,
+				71A4D30529DB567600BB4202 /* Network */,
+				71A4D32529DB567600BB4202 /* Shared */,
 				7122E16229DB41C6002E1D4C /* Assets.xcassets */,
 				7122E16429DB41C6002E1D4C /* LaunchScreen.storyboard */,
 				7122E16729DB41C6002E1D4C /* Info.plist */,
@@ -167,206 +167,206 @@
 			path = CarRentaliOSUITests;
 			sourceTree = "<group>";
 		};
-		7122E18929DB4229002E1D4C /* Shared */ = {
+		71A4D30529DB567600BB4202 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7122E18A29DB4229002E1D4C /* Models */,
-				7122E18B29DB4229002E1D4C /* Extensions */,
-				7122E18D29DB4229002E1D4C /* Styler */,
-				7122E18F29DB4229002E1D4C /* Views */,
-				7122E19129DB4229002E1D4C /* Services */,
+				71A4D30629DB567600BB4202 /* APIClient.swift */,
+				71A4D30729DB567600BB4202 /* HTTPMethod.swift */,
+				71A4D30829DB567600BB4202 /* HTTPError.swift */,
+				71A4D30929DB567600BB4202 /* Call.swift */,
 			);
-			name = Shared;
-			path = ../../CarRentaliOSSwiftUI/CarRental/CarRental/Shared;
+			name = Network;
+			path = CarRentaliOS/Network;
+			sourceTree = SOURCE_ROOT;
+		};
+		71A4D30A29DB567600BB4202 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D30B29DB567600BB4202 /* Maps */,
+				71A4D31029DB567600BB4202 /* Home */,
+				71A4D31629DB567600BB4202 /* App */,
+				71A4D31929DB567600BB4202 /* Entry */,
+			);
+			name = Features;
+			path = CarRentaliOS/Features;
+			sourceTree = SOURCE_ROOT;
+		};
+		71A4D30B29DB567600BB4202 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D30C29DB567600BB4202 /* Core */,
+				71A4D30D29DB567600BB4202 /* Model */,
+				71A4D30E29DB567600BB4202 /* View */,
+				71A4D30F29DB567600BB4202 /* Service */,
+			);
+			path = Maps;
 			sourceTree = "<group>";
 		};
-		7122E18A29DB4229002E1D4C /* Models */ = {
+		71A4D30C29DB567600BB4202 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		71A4D30D29DB567600BB4202 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71A4D30E29DB567600BB4202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71A4D30F29DB567600BB4202 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		71A4D31029DB567600BB4202 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D31129DB567600BB4202 /* Core */,
+				71A4D31329DB567600BB4202 /* View */,
+				71A4D31529DB567600BB4202 /* Service */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		71A4D31129DB567600BB4202 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D31229DB567600BB4202 /* HomeCore.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		71A4D31329DB567600BB4202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D31429DB567600BB4202 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71A4D31529DB567600BB4202 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		71A4D31629DB567600BB4202 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D31729DB567600BB4202 /* AppView.swift */,
+				71A4D31829DB567600BB4202 /* AppCore.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		71A4D31929DB567600BB4202 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D31A29DB567600BB4202 /* Core */,
+				71A4D31E29DB567600BB4202 /* Model */,
+				71A4D32029DB567600BB4202 /* View */,
+				71A4D32429DB567600BB4202 /* Service */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		71A4D31A29DB567600BB4202 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D31B29DB567600BB4202 /* EntryCore.swift */,
+				71A4D31C29DB567600BB4202 /* RegisterCore.swift */,
+				71A4D31D29DB567600BB4202 /* LoginCore.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		71A4D31E29DB567600BB4202 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D31F29DB567600BB4202 /* Customer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71A4D32029DB567600BB4202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D32129DB567600BB4202 /* LoginView.swift */,
+				71A4D32229DB567600BB4202 /* EntryView.swift */,
+				71A4D32329DB567600BB4202 /* RegisterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71A4D32429DB567600BB4202 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		71A4D32529DB567600BB4202 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				71A4D32629DB567600BB4202 /* Models */,
+				71A4D32729DB567600BB4202 /* Extensions */,
+				71A4D32929DB567600BB4202 /* Styler */,
+				71A4D32B29DB567600BB4202 /* Views */,
+				71A4D32D29DB567600BB4202 /* Services */,
+			);
+			name = Shared;
+			path = CarRentaliOS/Shared;
+			sourceTree = SOURCE_ROOT;
+		};
+		71A4D32629DB567600BB4202 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		7122E18B29DB4229002E1D4C /* Extensions */ = {
+		71A4D32729DB567600BB4202 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7122E18C29DB4229002E1D4C /* String+Extensions.swift */,
+				71A4D32829DB567600BB4202 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7122E18D29DB4229002E1D4C /* Styler */ = {
+		71A4D32929DB567600BB4202 /* Styler */ = {
 			isa = PBXGroup;
 			children = (
-				7122E18E29DB4229002E1D4C /* AppColor.swift */,
+				71A4D32A29DB567600BB4202 /* AppColor.swift */,
 			);
 			path = Styler;
 			sourceTree = "<group>";
 		};
-		7122E18F29DB4229002E1D4C /* Views */ = {
+		71A4D32B29DB567600BB4202 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7122E19029DB4229002E1D4C /* SharedTextView.swift */,
+				71A4D32C29DB567600BB4202 /* SharedTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		7122E19129DB4229002E1D4C /* Services */ = {
+		71A4D32D29DB567600BB4202 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		7122E19229DB4229002E1D4C /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				7122E19329DB4229002E1D4C /* APIClient.swift */,
-				7122E19429DB4229002E1D4C /* HTTPMethod.swift */,
-				7122E19529DB4229002E1D4C /* HTTPError.swift */,
-				7122E19629DB4229002E1D4C /* Call.swift */,
-			);
-			name = Network;
-			path = ../../CarRentaliOSSwiftUI/CarRental/CarRental/Network;
-			sourceTree = "<group>";
-		};
-		7122E19729DB4229002E1D4C /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				7122E19829DB4229002E1D4C /* Maps */,
-				7122E19D29DB4229002E1D4C /* Home */,
-				7122E1A329DB4229002E1D4C /* App */,
-				7122E1A629DB4229002E1D4C /* Entry */,
-			);
-			name = Features;
-			path = ../../CarRentaliOSSwiftUI/CarRental/CarRental/Features;
-			sourceTree = "<group>";
-		};
-		7122E19829DB4229002E1D4C /* Maps */ = {
-			isa = PBXGroup;
-			children = (
-				7122E19929DB4229002E1D4C /* Core */,
-				7122E19A29DB4229002E1D4C /* Model */,
-				7122E19B29DB4229002E1D4C /* View */,
-				7122E19C29DB4229002E1D4C /* Service */,
-			);
-			path = Maps;
-			sourceTree = "<group>";
-		};
-		7122E19929DB4229002E1D4C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		7122E19A29DB4229002E1D4C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7122E19B29DB4229002E1D4C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7122E19C29DB4229002E1D4C /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		7122E19D29DB4229002E1D4C /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				7122E19E29DB4229002E1D4C /* Core */,
-				7122E1A029DB4229002E1D4C /* View */,
-				7122E1A229DB4229002E1D4C /* Service */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		7122E19E29DB4229002E1D4C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				7122E19F29DB4229002E1D4C /* HomeCore.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		7122E1A029DB4229002E1D4C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7122E1A129DB4229002E1D4C /* HomeView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7122E1A229DB4229002E1D4C /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		7122E1A329DB4229002E1D4C /* App */ = {
-			isa = PBXGroup;
-			children = (
-				7122E1A429DB4229002E1D4C /* AppView.swift */,
-				7122E1A529DB4229002E1D4C /* AppCore.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		7122E1A629DB4229002E1D4C /* Entry */ = {
-			isa = PBXGroup;
-			children = (
-				7122E1A729DB4229002E1D4C /* Core */,
-				7122E1AB29DB4229002E1D4C /* Model */,
-				7122E1AD29DB4229002E1D4C /* View */,
-				7122E1B129DB4229002E1D4C /* Service */,
-			);
-			path = Entry;
-			sourceTree = "<group>";
-		};
-		7122E1A729DB4229002E1D4C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				7122E1A829DB4229002E1D4C /* EntryCore.swift */,
-				7122E1A929DB4229002E1D4C /* RegisterCore.swift */,
-				7122E1AA29DB4229002E1D4C /* LoginCore.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		7122E1AB29DB4229002E1D4C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7122E1AC29DB4229002E1D4C /* Customer.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7122E1AD29DB4229002E1D4C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7122E1AE29DB4229002E1D4C /* LoginView.swift */,
-				7122E1AF29DB4229002E1D4C /* EntryView.swift */,
-				7122E1B029DB4229002E1D4C /* RegisterView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7122E1B129DB4229002E1D4C /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,27 +507,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7122E1BB29DB422A002E1D4C /* AppView.swift in Sources */,
-				7122E1B229DB4229002E1D4C /* String+Extensions.swift in Sources */,
-				7122E1B729DB4229002E1D4C /* HTTPError.swift in Sources */,
-				7122E1C329DB422A002E1D4C /* RegisterView.swift in Sources */,
-				7122E1B529DB4229002E1D4C /* APIClient.swift in Sources */,
-				7122E1BC29DB422A002E1D4C /* AppCore.swift in Sources */,
-				7122E1BF29DB422A002E1D4C /* LoginCore.swift in Sources */,
-				7122E1B329DB4229002E1D4C /* AppColor.swift in Sources */,
-				7122E1C229DB422A002E1D4C /* EntryView.swift in Sources */,
+				71A4D33329DB567600BB4202 /* HomeView.swift in Sources */,
+				71A4D33129DB567600BB4202 /* Call.swift in Sources */,
+				71A4D33229DB567600BB4202 /* HomeCore.swift in Sources */,
+				71A4D33029DB567600BB4202 /* HTTPError.swift in Sources */,
+				71A4D33C29DB567600BB4202 /* RegisterView.swift in Sources */,
+				71A4D32E29DB567600BB4202 /* APIClient.swift in Sources */,
+				71A4D33E29DB567600BB4202 /* AppColor.swift in Sources */,
+				71A4D33A29DB567600BB4202 /* LoginView.swift in Sources */,
+				71A4D33D29DB567600BB4202 /* String+Extensions.swift in Sources */,
+				71A4D33829DB567600BB4202 /* LoginCore.swift in Sources */,
 				7122E15E29DB41C5002E1D4C /* ViewController.swift in Sources */,
-				7122E1B629DB4229002E1D4C /* HTTPMethod.swift in Sources */,
+				71A4D33729DB567600BB4202 /* RegisterCore.swift in Sources */,
+				71A4D33929DB567600BB4202 /* Customer.swift in Sources */,
 				7122E15A29DB41C5002E1D4C /* AppDelegate.swift in Sources */,
-				7122E1B829DB422A002E1D4C /* Call.swift in Sources */,
-				7122E1B929DB422A002E1D4C /* HomeCore.swift in Sources */,
-				7122E1BE29DB422A002E1D4C /* RegisterCore.swift in Sources */,
-				7122E1BA29DB422A002E1D4C /* HomeView.swift in Sources */,
-				7122E1B429DB4229002E1D4C /* SharedTextView.swift in Sources */,
-				7122E1C029DB422A002E1D4C /* Customer.swift in Sources */,
-				7122E1C129DB422A002E1D4C /* LoginView.swift in Sources */,
+				71A4D33429DB567600BB4202 /* AppView.swift in Sources */,
+				71A4D32F29DB567600BB4202 /* HTTPMethod.swift in Sources */,
 				7122E15C29DB41C5002E1D4C /* SceneDelegate.swift in Sources */,
-				7122E1BD29DB422A002E1D4C /* EntryCore.swift in Sources */,
+				71A4D33B29DB567600BB4202 /* EntryView.swift in Sources */,
+				71A4D33529DB567600BB4202 /* AppCore.swift in Sources */,
+				71A4D33F29DB567600BB4202 /* SharedTextView.swift in Sources */,
+				71A4D33629DB567600BB4202 /* EntryCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
