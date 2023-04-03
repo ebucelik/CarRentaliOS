@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7122E15A29DB41C5002E1D4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E15929DB41C5002E1D4C /* AppDelegate.swift */; };
+		7122E15C29DB41C5002E1D4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E15B29DB41C5002E1D4C /* SceneDelegate.swift */; };
+		7122E15E29DB41C5002E1D4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E15D29DB41C5002E1D4C /* ViewController.swift */; };
+		7122E16129DB41C5002E1D4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7122E15F29DB41C5002E1D4C /* Main.storyboard */; };
+		7122E16329DB41C6002E1D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7122E16229DB41C6002E1D4C /* Assets.xcassets */; };
+		7122E16629DB41C6002E1D4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7122E16429DB41C6002E1D4C /* LaunchScreen.storyboard */; };
+		7122E17129DB41C6002E1D4C /* CarRentaliOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17029DB41C6002E1D4C /* CarRentaliOSTests.swift */; };
+		7122E17B29DB41C6002E1D4C /* CarRentaliOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */; };
+		7122E17D29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7122E16D29DB41C6002E1D4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7122E14E29DB41C5002E1D4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7122E15529DB41C5002E1D4C;
+			remoteInfo = CarRentaliOS;
+		};
+		7122E17729DB41C6002E1D4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7122E14E29DB41C5002E1D4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7122E15529DB41C5002E1D4C;
+			remoteInfo = CarRentaliOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7122E15629DB41C5002E1D4C /* CarRentaliOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRentaliOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7122E15929DB41C5002E1D4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7122E15B29DB41C5002E1D4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7122E15D29DB41C5002E1D4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7122E16029DB41C5002E1D4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7122E16229DB41C6002E1D4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7122E16529DB41C6002E1D4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7122E16729DB41C6002E1D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7122E16C29DB41C6002E1D4C /* CarRentaliOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentaliOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7122E17029DB41C6002E1D4C /* CarRentaliOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSTests.swift; sourceTree = "<group>"; };
+		7122E17629DB41C6002E1D4C /* CarRentaliOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentaliOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITests.swift; sourceTree = "<group>"; };
+		7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7122E15329DB41C5002E1D4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122E16929DB41C6002E1D4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122E17329DB41C6002E1D4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7122E14D29DB41C5002E1D4C = {
+			isa = PBXGroup;
+			children = (
+				7122E15829DB41C5002E1D4C /* CarRentaliOS */,
+				7122E16F29DB41C6002E1D4C /* CarRentaliOSTests */,
+				7122E17929DB41C6002E1D4C /* CarRentaliOSUITests */,
+				7122E15729DB41C5002E1D4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7122E15729DB41C5002E1D4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7122E15629DB41C5002E1D4C /* CarRentaliOS.app */,
+				7122E16C29DB41C6002E1D4C /* CarRentaliOSTests.xctest */,
+				7122E17629DB41C6002E1D4C /* CarRentaliOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7122E15829DB41C5002E1D4C /* CarRentaliOS */ = {
+			isa = PBXGroup;
+			children = (
+				7122E15929DB41C5002E1D4C /* AppDelegate.swift */,
+				7122E15B29DB41C5002E1D4C /* SceneDelegate.swift */,
+				7122E15D29DB41C5002E1D4C /* ViewController.swift */,
+				7122E15F29DB41C5002E1D4C /* Main.storyboard */,
+				7122E16229DB41C6002E1D4C /* Assets.xcassets */,
+				7122E16429DB41C6002E1D4C /* LaunchScreen.storyboard */,
+				7122E16729DB41C6002E1D4C /* Info.plist */,
+			);
+			path = CarRentaliOS;
+			sourceTree = "<group>";
+		};
+		7122E16F29DB41C6002E1D4C /* CarRentaliOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				7122E17029DB41C6002E1D4C /* CarRentaliOSTests.swift */,
+			);
+			path = CarRentaliOSTests;
+			sourceTree = "<group>";
+		};
+		7122E17929DB41C6002E1D4C /* CarRentaliOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */,
+				7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */,
+			);
+			path = CarRentaliOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7122E15529DB41C5002E1D4C /* CarRentaliOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7122E18029DB41C6002E1D4C /* Build configuration list for PBXNativeTarget "CarRentaliOS" */;
+			buildPhases = (
+				7122E15229DB41C5002E1D4C /* Sources */,
+				7122E15329DB41C5002E1D4C /* Frameworks */,
+				7122E15429DB41C5002E1D4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarRentaliOS;
+			productName = CarRentaliOS;
+			productReference = 7122E15629DB41C5002E1D4C /* CarRentaliOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7122E16B29DB41C6002E1D4C /* CarRentaliOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7122E18329DB41C6002E1D4C /* Build configuration list for PBXNativeTarget "CarRentaliOSTests" */;
+			buildPhases = (
+				7122E16829DB41C6002E1D4C /* Sources */,
+				7122E16929DB41C6002E1D4C /* Frameworks */,
+				7122E16A29DB41C6002E1D4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7122E16E29DB41C6002E1D4C /* PBXTargetDependency */,
+			);
+			name = CarRentaliOSTests;
+			productName = CarRentaliOSTests;
+			productReference = 7122E16C29DB41C6002E1D4C /* CarRentaliOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7122E17529DB41C6002E1D4C /* CarRentaliOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7122E18629DB41C6002E1D4C /* Build configuration list for PBXNativeTarget "CarRentaliOSUITests" */;
+			buildPhases = (
+				7122E17229DB41C6002E1D4C /* Sources */,
+				7122E17329DB41C6002E1D4C /* Frameworks */,
+				7122E17429DB41C6002E1D4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7122E17829DB41C6002E1D4C /* PBXTargetDependency */,
+			);
+			name = CarRentaliOSUITests;
+			productName = CarRentaliOSUITests;
+			productReference = 7122E17629DB41C6002E1D4C /* CarRentaliOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7122E14E29DB41C5002E1D4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7122E15529DB41C5002E1D4C = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					7122E16B29DB41C6002E1D4C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 7122E15529DB41C5002E1D4C;
+					};
+					7122E17529DB41C6002E1D4C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 7122E15529DB41C5002E1D4C;
+					};
+				};
+			};
+			buildConfigurationList = 7122E15129DB41C5002E1D4C /* Build configuration list for PBXProject "CarRentaliOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7122E14D29DB41C5002E1D4C;
+			productRefGroup = 7122E15729DB41C5002E1D4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7122E15529DB41C5002E1D4C /* CarRentaliOS */,
+				7122E16B29DB41C6002E1D4C /* CarRentaliOSTests */,
+				7122E17529DB41C6002E1D4C /* CarRentaliOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7122E15429DB41C5002E1D4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7122E16629DB41C6002E1D4C /* LaunchScreen.storyboard in Resources */,
+				7122E16329DB41C6002E1D4C /* Assets.xcassets in Resources */,
+				7122E16129DB41C5002E1D4C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122E16A29DB41C6002E1D4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122E17429DB41C6002E1D4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7122E15229DB41C5002E1D4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7122E15E29DB41C5002E1D4C /* ViewController.swift in Sources */,
+				7122E15A29DB41C5002E1D4C /* AppDelegate.swift in Sources */,
+				7122E15C29DB41C5002E1D4C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122E16829DB41C6002E1D4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7122E17129DB41C6002E1D4C /* CarRentaliOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122E17229DB41C6002E1D4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7122E17B29DB41C6002E1D4C /* CarRentaliOSUITests.swift in Sources */,
+				7122E17D29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7122E16E29DB41C6002E1D4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7122E15529DB41C5002E1D4C /* CarRentaliOS */;
+			targetProxy = 7122E16D29DB41C6002E1D4C /* PBXContainerItemProxy */;
+		};
+		7122E17829DB41C6002E1D4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7122E15529DB41C5002E1D4C /* CarRentaliOS */;
+			targetProxy = 7122E17729DB41C6002E1D4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7122E15F29DB41C5002E1D4C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7122E16029DB41C5002E1D4C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7122E16429DB41C6002E1D4C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7122E16529DB41C6002E1D4C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7122E17E29DB41C6002E1D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7122E17F29DB41C6002E1D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7122E18129DB41C6002E1D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7UZH6B548Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CarRentaliOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebucelik.CarRentaliOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7122E18229DB41C6002E1D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7UZH6B548Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CarRentaliOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebucelik.CarRentaliOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7122E18429DB41C6002E1D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7UZH6B548Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebucelik.CarRentaliOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarRentaliOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarRentaliOS";
+			};
+			name = Debug;
+		};
+		7122E18529DB41C6002E1D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7UZH6B548Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebucelik.CarRentaliOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarRentaliOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarRentaliOS";
+			};
+			name = Release;
+		};
+		7122E18729DB41C6002E1D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7UZH6B548Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebucelik.CarRentaliOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CarRentaliOS;
+			};
+			name = Debug;
+		};
+		7122E18829DB41C6002E1D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7UZH6B548Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebucelik.CarRentaliOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CarRentaliOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7122E15129DB41C5002E1D4C /* Build configuration list for PBXProject "CarRentaliOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7122E17E29DB41C6002E1D4C /* Debug */,
+				7122E17F29DB41C6002E1D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7122E18029DB41C6002E1D4C /* Build configuration list for PBXNativeTarget "CarRentaliOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7122E18129DB41C6002E1D4C /* Debug */,
+				7122E18229DB41C6002E1D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7122E18329DB41C6002E1D4C /* Build configuration list for PBXNativeTarget "CarRentaliOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7122E18429DB41C6002E1D4C /* Debug */,
+				7122E18529DB41C6002E1D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7122E18629DB41C6002E1D4C /* Build configuration list for PBXNativeTarget "CarRentaliOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7122E18729DB41C6002E1D4C /* Debug */,
+				7122E18829DB41C6002E1D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7122E14E29DB41C5002E1D4C /* Project object */;
+}
