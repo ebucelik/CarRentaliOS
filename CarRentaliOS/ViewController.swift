@@ -18,7 +18,7 @@ class ViewController: UIViewController {
                     homeState: HomeCore.State(),
                     entryState: EntryCore.State(
                         loginState: LoginCore.State(
-                            customer: .emptyCustomer
+                            customer: .emptyLoginCustomer
                         )
                     )
                 ),

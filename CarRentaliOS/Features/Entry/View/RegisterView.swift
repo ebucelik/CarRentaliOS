@@ -14,15 +14,60 @@ struct RegisterView: View {
 
     var body: some View {
         WithViewStore(store) { viewStore in
-            Text("Click on me to go to login view")
+            registerBody(viewStore)
+        }
+        .navigationTitle("Sign Up")
+    }
+
+    @ViewBuilder
+    private func registerBody(_ viewStore: ViewStoreOf<RegisterCore>) -> some View {
+        VStack(spacing: 15) {
+            SharedTextView(
+                systemSymbol: .personFill,
+                placeholder: "firstname",
+                text: viewStore.binding(\.$customer.firstName)
+            )
+
+            SharedTextView(
+                systemSymbol: .personFill,
+                placeholder: "lastname",
+                text: viewStore.binding(\.$customer.lastName)
+            )
+
+            SharedTextView(
+                systemSymbol: .personFill,
+                placeholder: "e-mail",
+                text: viewStore.binding(\.$customer.email)
+            )
+
+            SharedTextView(
+                secure: true,
+                systemSymbol: .lockFill,
+                placeholder: "password",
+                text: viewStore.binding(\.$customer.password)
+            )
+
+            SharedTextView(
+                systemSymbol: .phoneFill,
+                placeholder: "phone number",
+                text: viewStore.binding(\.$customer.phoneNumber)
+            )
+
+            SharedTextView(
+                systemSymbol: .calendar,
+                placeholder: "date of birth",
+                text: viewStore.binding(\.$customer.dateOfBirth)
+            )
+
+            Text("You have an account? Sign in.")
+                .font(.caption)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .onTapGesture {
                     viewStore.send(.showLogin)
                 }
 
-            Text("Click on me to go to home")
-                .onTapGesture {
-                    viewStore.send(.register)
-                }
+            Spacer()
         }
+        .padding()
     }
 }

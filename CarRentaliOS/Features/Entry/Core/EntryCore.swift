@@ -23,19 +23,26 @@ class EntryCore: ReducerProtocol {
     var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in
             switch action {
-            case .login(.login), .register(.register):
+            case .login(.signedIn), .register(.signedUp):
+                state.loginState = LoginCore.State(
+                    customer: .emptyLoginCustomer
+                )
+                state.registerState = nil
+
                 return .task { .home }
 
             case .login(.showRegister):
                 state.loginState = nil
-                state.registerState = RegisterCore.State()
+                state.registerState = RegisterCore.State(
+                    customer: .emptyCustomer
+                )
 
                 return .none
 
             case .register(.showLogin):
                 state.registerState = nil
                 state.loginState = LoginCore.State(
-                    customer: .emptyCustomer
+                    customer: .emptyLoginCustomer
                 )
 
                 return .none

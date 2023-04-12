@@ -13,23 +13,25 @@ struct EntryView: View {
     let store: StoreOf<EntryCore>
 
     var body: some View {
-        WithViewStore(store) { viewStore in
-            IfLetStore(
-                store.scope(
-                    state: \.loginState,
-                    action: EntryCore.Action.login
-                )
-            ) { loginStore in
-                LoginView(store: loginStore)
-            }
+        NavigationView {
+            WithViewStore(store) { viewStore in
+                IfLetStore(
+                    store.scope(
+                        state: \.loginState,
+                        action: EntryCore.Action.login
+                    )
+                ) { loginStore in
+                    LoginView(store: loginStore)
+                }
 
-            IfLetStore(
-                store.scope(
-                    state: \.registerState,
-                    action: EntryCore.Action.register
-                )
-            ) { registerStore in
-                RegisterView(store: registerStore)
+                IfLetStore(
+                    store.scope(
+                        state: \.registerState,
+                        action: EntryCore.Action.register
+                    )
+                ) { registerStore in
+                    RegisterView(store: registerStore)
+                }
             }
         }
     }

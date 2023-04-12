@@ -9,23 +9,38 @@ import ComposableArchitecture
 
 class RegisterCore: ReducerProtocol {
     struct State: Equatable {
-
+        @BindingState
+        var customer: Customer
     }
 
-    enum Action {
+    enum Action: BindableAction {
         case showLogin
         case register
+        case signedUp
         case none
+        case binding(BindingAction<State>)
     }
 
-    func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        switch action {
-        case .showLogin:
-            return .none
-        case .register:
-            return .none
-        case .none:
-            return .none
+    var body: some ReducerProtocol<State, Action> {
+        BindingReducer()
+
+        Reduce { state, action in
+            switch action {
+            case .showLogin:
+                return .none
+
+            case .register:
+                return .none
+
+            case .signedUp:
+                return .none
+
+            case .none:
+                return .none
+
+            case .binding:
+                return .none
+            }
         }
     }
 }

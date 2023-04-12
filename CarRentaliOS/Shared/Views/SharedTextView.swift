@@ -48,9 +48,18 @@ struct SharedTextView: View {
                     )
                 }
             }
+            .textInputAutocapitalization(.never)
             .padding()
-            .background(AppColor.blue)
+            .background(Color.white)
             .cornerRadius(8)
+            .background(
+                RoundedRectangle(
+                    cornerRadius: 8
+                )
+                .stroke(
+                    style: StrokeStyle(lineWidth: 1)
+                )
+            )
         }
     }
 }

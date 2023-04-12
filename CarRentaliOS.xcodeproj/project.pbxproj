@@ -18,6 +18,13 @@
 		7122E17D29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */; };
 		7122E1C629DB436C002E1D4C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7122E1C529DB436C002E1D4C /* ComposableArchitecture */; };
 		7122E1C929DB4392002E1D4C /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 7122E1C829DB4392002E1D4C /* SFSafeSymbols */; };
+		7167EE5829E7683800CFAA02 /* SharedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5729E7683800CFAA02 /* SharedButton.swift */; };
+		7167EE5A29E769E800CFAA02 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5929E769E800CFAA02 /* Loadable.swift */; };
+		7167EE5C29E76A8F00CFAA02 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5B29E76A8F00CFAA02 /* Token.swift */; };
+		7167EE5E29E76BA100CFAA02 /* LoginCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5D29E76BA100CFAA02 /* LoginCustomer.swift */; };
+		7167EE6029E76BFE00CFAA02 /* LoginCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5F29E76BFE00CFAA02 /* LoginCall.swift */; };
+		7167EE6329E76CA400CFAA02 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE6229E76CA400CFAA02 /* LoginService.swift */; };
+		7167EE6529E76D5F00CFAA02 /* DependencyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE6429E76D5F00CFAA02 /* DependencyValues.swift */; };
 		71A054FC29DB6CA400726DE4 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A054FB29DB6CA400726DE4 /* GoogleMapsViewController.swift */; };
 		71A4D32E29DB567600BB4202 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D30629DB567600BB4202 /* APIClient.swift */; };
 		71A4D32F29DB567600BB4202 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D30729DB567600BB4202 /* HTTPMethod.swift */; };
@@ -75,6 +82,13 @@
 		7122E17629DB41C6002E1D4C /* CarRentaliOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentaliOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITests.swift; sourceTree = "<group>"; };
 		7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7167EE5729E7683800CFAA02 /* SharedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedButton.swift; sourceTree = "<group>"; };
+		7167EE5929E769E800CFAA02 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		7167EE5B29E76A8F00CFAA02 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		7167EE5D29E76BA100CFAA02 /* LoginCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCustomer.swift; sourceTree = "<group>"; };
+		7167EE5F29E76BFE00CFAA02 /* LoginCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCall.swift; sourceTree = "<group>"; };
+		7167EE6229E76CA400CFAA02 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		7167EE6429E76D5F00CFAA02 /* DependencyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyValues.swift; sourceTree = "<group>"; };
 		71A054F729DB6C0600726DE4 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMaps.xcframework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
 		71A054FB29DB6CA400726DE4 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		71A054FD29DB6E9500726DE4 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsBase.xcframework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
@@ -191,6 +205,15 @@
 			path = CarRentaliOSUITests;
 			sourceTree = "<group>";
 		};
+		7167EE6129E76C9500CFAA02 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7167EE5F29E76BFE00CFAA02 /* LoginCall.swift */,
+				7167EE6229E76CA400CFAA02 /* LoginService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		71A4D30529DB567600BB4202 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +221,7 @@
 				71A4D30729DB567600BB4202 /* HTTPMethod.swift */,
 				71A4D30829DB567600BB4202 /* HTTPError.swift */,
 				71A4D30929DB567600BB4202 /* Call.swift */,
+				7167EE6429E76D5F00CFAA02 /* DependencyValues.swift */,
 			);
 			name = Network;
 			path = CarRentaliOS/Network;
@@ -324,6 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				71A4D31F29DB567600BB4202 /* Customer.swift */,
+				7167EE5B29E76A8F00CFAA02 /* Token.swift */,
+				7167EE5D29E76BA100CFAA02 /* LoginCustomer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +367,7 @@
 		71A4D32429DB567600BB4202 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7167EE6129E76C9500CFAA02 /* Login */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -361,6 +388,7 @@
 		71A4D32629DB567600BB4202 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7167EE5929E769E800CFAA02 /* Loadable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,6 +414,7 @@
 			children = (
 				71A4D32C29DB567600BB4202 /* SharedTextView.swift */,
 				71D42B0D29DB73A800C722AC /* ViewControllerRepresentable.swift */,
+				7167EE5729E7683800CFAA02 /* SharedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -601,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7167EE6529E76D5F00CFAA02 /* DependencyValues.swift in Sources */,
 				71A4D33329DB567600BB4202 /* HomeView.swift in Sources */,
 				71A4D33129DB567600BB4202 /* Call.swift in Sources */,
 				71D42B0E29DB73A800C722AC /* ViewControllerRepresentable.swift in Sources */,
@@ -610,16 +640,22 @@
 				71A4D33029DB567600BB4202 /* HTTPError.swift in Sources */,
 				71A4D33C29DB567600BB4202 /* RegisterView.swift in Sources */,
 				71A4D32E29DB567600BB4202 /* APIClient.swift in Sources */,
+				7167EE6029E76BFE00CFAA02 /* LoginCall.swift in Sources */,
 				71A4D33E29DB567600BB4202 /* AppColor.swift in Sources */,
 				71A4D33A29DB567600BB4202 /* LoginView.swift in Sources */,
 				71A4D33D29DB567600BB4202 /* String+Extensions.swift in Sources */,
+				7167EE5829E7683800CFAA02 /* SharedButton.swift in Sources */,
 				71A4D33829DB567600BB4202 /* LoginCore.swift in Sources */,
 				7122E15E29DB41C5002E1D4C /* ViewController.swift in Sources */,
+				7167EE5C29E76A8F00CFAA02 /* Token.swift in Sources */,
+				7167EE6329E76CA400CFAA02 /* LoginService.swift in Sources */,
 				71A4D33729DB567600BB4202 /* RegisterCore.swift in Sources */,
+				7167EE5E29E76BA100CFAA02 /* LoginCustomer.swift in Sources */,
 				71A054FC29DB6CA400726DE4 /* GoogleMapsViewController.swift in Sources */,
 				71A4D33929DB567600BB4202 /* Customer.swift in Sources */,
 				7122E15A29DB41C5002E1D4C /* AppDelegate.swift in Sources */,
 				71A4D33429DB567600BB4202 /* AppView.swift in Sources */,
+				7167EE5A29E769E800CFAA02 /* Loadable.swift in Sources */,
 				71A4D32F29DB567600BB4202 /* HTTPMethod.swift in Sources */,
 				7122E15C29DB41C5002E1D4C /* SceneDelegate.swift in Sources */,
 				71A4D33B29DB567600BB4202 /* EntryView.swift in Sources */,

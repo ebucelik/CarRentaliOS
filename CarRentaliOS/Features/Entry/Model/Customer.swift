@@ -8,19 +8,23 @@
 import Foundation
 
 struct Customer: Codable, Equatable {
-    var firstname: String
-    var lastname: String
-    var username: String
+    var firstName: String
+    var lastName: String
+    var email: String
     var password: String
+    var phoneNumber: String
+    var dateOfBirth: String
 }
 
 extension Customer {
     static var emptyCustomer: Customer {
         Customer(
-            firstname: "",
-            lastname: "",
-            username: "",
-            password: ""
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+            phoneNumber: "",
+            dateOfBirth: ""
         )
     }
 }

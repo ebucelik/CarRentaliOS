@@ -11,15 +11,32 @@ import ComposableArchitecture
 class LoginCore: ReducerProtocol {
     struct State: Equatable {
         @BindingState
-        var customer: Customer
+        var customer: LoginCustomer
+
+        var tokenState: Loadable<Token> = .none
+
+        var isError: Bool {
+            if case .error = tokenState {
+                return true
+            }
+
+            return false
+        }
     }
 
     enum Action: BindableAction {
         case showRegister
         case login
+        case signedIn
+        case tokenStateChanged(Loadable<Token>)
         case none
         case binding(BindingAction<State>)
     }
+
+    @Dependency(\.loginService) var service
+    @Dependency(\.mainScheduler) var mainScheduler
+
+    struct DebounceId: Hashable {}
 
     var body: some ReducerProtocol<State, Action> {
         BindingReducer()
@@ -28,12 +45,38 @@ class LoginCore: ReducerProtocol {
             switch action {
             case .showRegister:
                 return .none
-            case .login:
 
-                UserDefaults.standard.set("access", forKey: "accessToken")
-                UserDefaults.standard.synchronize()
+            case .login:
+                return .task { [customer = state.customer] in
+                    let token = try await self.service.login(loginCustomer: customer)
+
+                    return .tokenStateChanged(.loaded(token))
+                } catch: { error in
+                    if let httpError = error as? HTTPError {
+                        return .tokenStateChanged(.error(httpError))
+                    }
+
+                    return .tokenStateChanged(.error(HTTPError.unexpectedError))
+                }
+                .debounce(id: DebounceId(), for: 1, scheduler: self.mainScheduler)
+                .prepend(.tokenStateChanged(.loading))
+                .eraseToEffect()
+
+            case .signedIn:
+                return .none
+
+            case let .tokenStateChanged(tokenState):
+                state.tokenState = tokenState
+
+                if case let .loaded(token) = tokenState {
+                    UserDefaults.standard.set(token.token, forKey: "accessToken")
+                    UserDefaults.standard.synchronize()
+
+                    return .send(.signedIn)
+                }
 
                 return .none
+
             case .none:
                 return .none
 

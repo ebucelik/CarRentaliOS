@@ -17,23 +17,47 @@ struct LoginView: View {
             VStack(spacing: 15) {
                 SharedTextView(
                     systemSymbol: .personFill,
-                    placeholder: "Username",
-                    text: viewStore.binding(\.$customer.username)
+                    placeholder: "e-mail",
+                    text: viewStore.binding(\.$customer.email)
                 )
 
                 SharedTextView(
                     secure: true,
                     systemSymbol: .lockFill,
-                    placeholder: "Password",
+                    placeholder: "password",
                     text: viewStore.binding(\.$customer.password)
                 )
 
-                Text("Click on me to go to home")
+                Text("You don't have an account? Sign up now.")
+                    .font(.caption)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .onTapGesture {
+                        viewStore.send(.showRegister)
+                    }
+
+                Spacer()
+
+                switch viewStore.tokenState {
+                case .loaded:
+                    SharedButton(title: "Sign In")
+
+                case .loading:
+                    SharedButton(
+                        title: "Sign In",
+                        isLoading: true
+                    )
+
+                case .none, .error:
+                    SharedButton(
+                        title: "Sign In",
+                        isError: viewStore.isError
+                    ) {
                         viewStore.send(.login)
                     }
+                }
             }
             .padding()
         }
+        .navigationTitle("Sign In")
     }
 }
