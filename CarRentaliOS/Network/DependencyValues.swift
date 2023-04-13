@@ -9,6 +9,11 @@ import Foundation
 import ComposableArchitecture
 
 extension DependencyValues {
+    var registerService: RegisterService {
+        get { self[RegisterService.self] }
+        set { self[RegisterService.self] = newValue }
+    }
+
     var loginService: LoginService {
         get { self[LoginService.self] }
         set { self[LoginService.self] = newValue }

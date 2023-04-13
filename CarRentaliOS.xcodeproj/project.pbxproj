@@ -25,6 +25,9 @@
 		7167EE6029E76BFE00CFAA02 /* LoginCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5F29E76BFE00CFAA02 /* LoginCall.swift */; };
 		7167EE6329E76CA400CFAA02 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE6229E76CA400CFAA02 /* LoginService.swift */; };
 		7167EE6529E76D5F00CFAA02 /* DependencyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE6429E76D5F00CFAA02 /* DependencyValues.swift */; };
+		71890DD329E8888E00ADA3AF /* RegistrationCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71890DD229E8888E00ADA3AF /* RegistrationCustomer.swift */; };
+		71890DD629E8894300ADA3AF /* RegisterCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71890DD529E8894300ADA3AF /* RegisterCall.swift */; };
+		71890DD829E88A0B00ADA3AF /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71890DD729E88A0B00ADA3AF /* RegisterService.swift */; };
 		71A054FC29DB6CA400726DE4 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A054FB29DB6CA400726DE4 /* GoogleMapsViewController.swift */; };
 		71A4D32E29DB567600BB4202 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D30629DB567600BB4202 /* APIClient.swift */; };
 		71A4D32F29DB567600BB4202 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D30729DB567600BB4202 /* HTTPMethod.swift */; };
@@ -89,6 +92,9 @@
 		7167EE5F29E76BFE00CFAA02 /* LoginCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCall.swift; sourceTree = "<group>"; };
 		7167EE6229E76CA400CFAA02 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		7167EE6429E76D5F00CFAA02 /* DependencyValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyValues.swift; sourceTree = "<group>"; };
+		71890DD229E8888E00ADA3AF /* RegistrationCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCustomer.swift; sourceTree = "<group>"; };
+		71890DD529E8894300ADA3AF /* RegisterCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCall.swift; sourceTree = "<group>"; };
+		71890DD729E88A0B00ADA3AF /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		71A054F729DB6C0600726DE4 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMaps.xcframework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
 		71A054FB29DB6CA400726DE4 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		71A054FD29DB6E9500726DE4 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsBase.xcframework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
@@ -212,6 +218,15 @@
 				7167EE6229E76CA400CFAA02 /* LoginService.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		71890DD429E8893300ADA3AF /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				71890DD529E8894300ADA3AF /* RegisterCall.swift */,
+				71890DD729E88A0B00ADA3AF /* RegisterService.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		71A4D30529DB567600BB4202 /* Network */ = {
@@ -350,6 +365,7 @@
 				71A4D31F29DB567600BB4202 /* Customer.swift */,
 				7167EE5B29E76A8F00CFAA02 /* Token.swift */,
 				7167EE5D29E76BA100CFAA02 /* LoginCustomer.swift */,
+				71890DD229E8888E00ADA3AF /* RegistrationCustomer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,6 +383,7 @@
 		71A4D32429DB567600BB4202 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				71890DD429E8893300ADA3AF /* Register */,
 				7167EE6129E76C9500CFAA02 /* Login */,
 			);
 			path = Service;
@@ -631,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7167EE6529E76D5F00CFAA02 /* DependencyValues.swift in Sources */,
+				71890DD829E88A0B00ADA3AF /* RegisterService.swift in Sources */,
 				71A4D33329DB567600BB4202 /* HomeView.swift in Sources */,
 				71A4D33129DB567600BB4202 /* Call.swift in Sources */,
 				71D42B0E29DB73A800C722AC /* ViewControllerRepresentable.swift in Sources */,
@@ -638,6 +656,7 @@
 				71A4D34329DB5B3000BB4202 /* GoogleMapsService.swift in Sources */,
 				71A4D34129DB5B1600BB4202 /* GoogleMapsServiceProtocol.swift in Sources */,
 				71A4D33029DB567600BB4202 /* HTTPError.swift in Sources */,
+				71890DD329E8888E00ADA3AF /* RegistrationCustomer.swift in Sources */,
 				71A4D33C29DB567600BB4202 /* RegisterView.swift in Sources */,
 				71A4D32E29DB567600BB4202 /* APIClient.swift in Sources */,
 				7167EE6029E76BFE00CFAA02 /* LoginCall.swift in Sources */,
@@ -657,6 +676,7 @@
 				71A4D33429DB567600BB4202 /* AppView.swift in Sources */,
 				7167EE5A29E769E800CFAA02 /* Loadable.swift in Sources */,
 				71A4D32F29DB567600BB4202 /* HTTPMethod.swift in Sources */,
+				71890DD629E8894300ADA3AF /* RegisterCall.swift in Sources */,
 				7122E15C29DB41C5002E1D4C /* SceneDelegate.swift in Sources */,
 				71A4D33B29DB567600BB4202 /* EntryView.swift in Sources */,
 				71A4D33529DB567600BB4202 /* AppCore.swift in Sources */,

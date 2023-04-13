@@ -37,7 +37,7 @@ struct RegisterView: View {
             SharedTextView(
                 systemSymbol: .personFill,
                 placeholder: "e-mail",
-                text: viewStore.binding(\.$customer.email)
+                text: viewStore.binding(\.$customer.eMail)
             )
 
             SharedTextView(
@@ -67,6 +67,25 @@ struct RegisterView: View {
                 }
 
             Spacer()
+
+            switch viewStore.registrationCustomerState {
+            case .loaded:
+                SharedButton(title: "Sign Up")
+
+            case .loading:
+                SharedButton(
+                    title: "Sign Up",
+                    isLoading: true
+                )
+
+            case .none, .error:
+                SharedButton(
+                    title: "Sign Up",
+                    isError: viewStore.isError
+                ) {
+                    viewStore.send(.register)
+                }
+            }
         }
         .padding()
     }

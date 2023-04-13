@@ -10,7 +10,7 @@ import Foundation
 struct Customer: Codable, Equatable {
     var firstName: String
     var lastName: String
-    var email: String
+    var eMail: String
     var password: String
     var phoneNumber: String
     var dateOfBirth: String
@@ -21,7 +21,7 @@ extension Customer {
         Customer(
             firstName: "",
             lastName: "",
-            email: "",
+            eMail: "",
             password: "",
             phoneNumber: "",
             dateOfBirth: ""
