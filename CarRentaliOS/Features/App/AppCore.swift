@@ -32,13 +32,11 @@ class AppCore: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case .checkAccessToken:
-                if let accessToken = UserDefaults.standard.string(forKey: "accessToken") {
-                    state.homeState.accessToken = accessToken
-
-                    return .task { .home(.none) }
+                guard UserDefaults.standard.string(forKey: "accessToken") != nil else {
+                    return .send(.entry(.none))
                 }
 
-                return .task { .entry(.none) }
+                return .send(.home(.none))
 
             case .home(.none):
                 state.showEntry = false
@@ -51,7 +49,7 @@ class AppCore: ReducerProtocol {
                 return .none
 
             case .entry(.home):
-                return .task { .home(.none) }
+                return .send(.home(.none))
 
             case .binding:
                 return .none

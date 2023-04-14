@@ -14,6 +14,8 @@ class HomeCore: ReducerProtocol {
 
         @BindingState
         var showToolbar: Bool = false
+
+        var carsState: CarsCore.State = CarsCore.State()
     }
 
     enum Action: BindableAction {
@@ -21,10 +23,19 @@ class HomeCore: ReducerProtocol {
         case showToolbar
         case none
         case binding(BindingAction<State>)
+
+        case carAction(CarsCore.Action)
     }
 
     var body: some ReducerProtocol<State, Action> {
         BindingReducer()
+        
+        Scope(
+            state: \.carsState,
+            action: /HomeCore.Action.carAction
+        ) {
+            CarsCore()
+        }
 
         Reduce { state, action in
             switch action {
@@ -44,6 +55,9 @@ class HomeCore: ReducerProtocol {
                 return .none
 
             case .binding:
+                return .none
+
+            case .carAction:
                 return .none
             }
         }

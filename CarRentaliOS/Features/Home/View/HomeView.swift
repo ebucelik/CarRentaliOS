@@ -16,10 +16,15 @@ struct HomeView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             TabView {
-                Text("Cars")
-                    .tabItem {
-                        Label("Cars", systemSymbol: .carFill)
-                    }
+                CarsView(
+                    store: store.scope(
+                        state: \.carsState,
+                        action: HomeCore.Action.carAction
+                    )
+                )
+                .tabItem {
+                    Label("Cars", systemSymbol: .carFill)
+                }
 
                 Text("Rentals")
                     .tabItem {

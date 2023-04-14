@@ -41,8 +41,6 @@ class RegisterCore: ReducerProtocol {
     @Dependency(\.registerService) var service
     @Dependency(\.mainScheduler) var mainScheduler
 
-    struct DebounceID: Hashable {}
-
     var body: some ReducerProtocol<State, Action> {
         BindingReducer()
 

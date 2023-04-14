@@ -29,7 +29,7 @@ class EntryCore: ReducerProtocol {
                 )
                 state.registerState = nil
 
-                return .task { .home }
+                return .send(.home)
 
             case .login(.showRegister):
                 state.loginState = nil

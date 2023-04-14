@@ -36,8 +36,6 @@ class LoginCore: ReducerProtocol {
     @Dependency(\.loginService) var service
     @Dependency(\.mainScheduler) var mainScheduler
 
-    struct DebounceId: Hashable {}
-
     var body: some ReducerProtocol<State, Action> {
         BindingReducer()
 
@@ -58,7 +56,7 @@ class LoginCore: ReducerProtocol {
 
                     return .tokenStateChanged(.error(HTTPError.unexpectedError))
                 }
-                .debounce(id: DebounceId(), for: 1, scheduler: self.mainScheduler)
+                .debounce(id: DebounceID(), for: 1, scheduler: self.mainScheduler)
                 .prepend(.tokenStateChanged(.loading))
                 .eraseToEffect()
 

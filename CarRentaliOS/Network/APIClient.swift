@@ -14,7 +14,12 @@ public class APIClient {
         let response = try await URLSession.shared.data(for: urlRequest)
 
         if let httpResponse = response.1 as? HTTPURLResponse {
+
+            print("STATUS: \(httpResponse.statusCode)")
+
             if isSuccessStatusCode(httpResponse.statusCode) {
+                print("DATA: \(String(decoding: response.0, as: UTF8.self))")
+
                 return try JSONDecoder().decode(C.Response.self, from: response.0)
             } else if httpResponse.statusCode == 401 {
                 throw HTTPError.unauthorized
@@ -46,12 +51,18 @@ extension APIClient {
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
 
+        if let accessToken = UserDefaults.standard.string(forKey: "accessToken") {
+            urlRequest.setValue(accessToken, forHTTPHeaderField: "Auth")
+        }
+
         if let body = call.body,
            let encodedBody = try? JSONEncoder().encode(body) {
             urlRequest.httpBody = encodedBody
 
             return urlRequest
         }
+
+        print("\nREQUEST: \(url)")
 
         return urlRequest
     }

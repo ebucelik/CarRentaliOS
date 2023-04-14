@@ -23,6 +23,11 @@ extension DependencyValues {
         get { self[DispatchQueue.self] }
         set { self[DispatchQueue.self] = newValue }
     }
+
+    var carService: CarService {
+        get { self[CarService.self] }
+        set{ self[CarService.self] = newValue }
+    }
 }
 
 extension DispatchQueue: DependencyKey {

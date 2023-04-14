@@ -49,6 +49,13 @@
 		71A4D33F29DB567600BB4202 /* SharedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D32C29DB567600BB4202 /* SharedTextView.swift */; };
 		71A4D34129DB5B1600BB4202 /* GoogleMapsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D34029DB5B1600BB4202 /* GoogleMapsServiceProtocol.swift */; };
 		71A4D34329DB5B3000BB4202 /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4D34229DB5B3000BB4202 /* GoogleMapsService.swift */; };
+		71C78B8E29E9C19F00B08A83 /* CarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B8D29E9C19F00B08A83 /* CarsView.swift */; };
+		71C78B9029E9C1D000B08A83 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B8F29E9C1D000B08A83 /* Car.swift */; };
+		71C78B9229E9C24900B08A83 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9129E9C24900B08A83 /* CarService.swift */; };
+		71C78B9429E9C31600B08A83 /* AllCarsCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9329E9C31600B08A83 /* AllCarsCall.swift */; };
+		71C78B9629E9C38D00B08A83 /* AvailableCarsCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9529E9C38C00B08A83 /* AvailableCarsCall.swift */; };
+		71C78B9829E9C46600B08A83 /* CarsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9729E9C46600B08A83 /* CarsCore.swift */; };
+		71C78B9A29E9C4DA00B08A83 /* DebounceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9929E9C4DA00B08A83 /* DebounceID.swift */; };
 		71D42B0A29DB734300C722AC /* libPods-CarRentaliOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D42B0929DB734300C722AC /* libPods-CarRentaliOS.a */; };
 		71D42B0C29DB734A00C722AC /* libPods-CarRentaliOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D42B0B29DB734A00C722AC /* libPods-CarRentaliOS.a */; };
 		71D42B0E29DB73A800C722AC /* ViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D42B0D29DB73A800C722AC /* ViewControllerRepresentable.swift */; };
@@ -119,6 +126,13 @@
 		71A4D32C29DB567600BB4202 /* SharedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTextView.swift; sourceTree = "<group>"; };
 		71A4D34029DB5B1600BB4202 /* GoogleMapsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsServiceProtocol.swift; sourceTree = "<group>"; };
 		71A4D34229DB5B3000BB4202 /* GoogleMapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsService.swift; sourceTree = "<group>"; };
+		71C78B8D29E9C19F00B08A83 /* CarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsView.swift; sourceTree = "<group>"; };
+		71C78B8F29E9C1D000B08A83 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		71C78B9129E9C24900B08A83 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
+		71C78B9329E9C31600B08A83 /* AllCarsCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCarsCall.swift; sourceTree = "<group>"; };
+		71C78B9529E9C38C00B08A83 /* AvailableCarsCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCarsCall.swift; sourceTree = "<group>"; };
+		71C78B9729E9C46600B08A83 /* CarsCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsCore.swift; sourceTree = "<group>"; };
+		71C78B9929E9C4DA00B08A83 /* DebounceID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceID.swift; sourceTree = "<group>"; };
 		71D42B0929DB734300C722AC /* libPods-CarRentaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-CarRentaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D42B0B29DB734A00C722AC /* libPods-CarRentaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-CarRentaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D42B0D29DB73A800C722AC /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
@@ -245,6 +259,7 @@
 		71A4D30A29DB567600BB4202 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				71C78B8829E9C16F00B08A83 /* Cars */,
 				71A4D30B29DB567600BB4202 /* Maps */,
 				71A4D31029DB567600BB4202 /* Home */,
 				71A4D31629DB567600BB4202 /* App */,
@@ -406,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				7167EE5929E769E800CFAA02 /* Loadable.swift */,
+				71C78B9929E9C4DA00B08A83 /* DebounceID.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -441,6 +457,51 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		71C78B8829E9C16F00B08A83 /* Cars */ = {
+			isa = PBXGroup;
+			children = (
+				71C78B8C29E9C19000B08A83 /* Model */,
+				71C78B8B29E9C18A00B08A83 /* Core */,
+				71C78B8A29E9C18200B08A83 /* Service */,
+				71C78B8929E9C17A00B08A83 /* View */,
+			);
+			path = Cars;
+			sourceTree = "<group>";
+		};
+		71C78B8929E9C17A00B08A83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71C78B8D29E9C19F00B08A83 /* CarsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71C78B8A29E9C18200B08A83 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				71C78B9129E9C24900B08A83 /* CarService.swift */,
+				71C78B9329E9C31600B08A83 /* AllCarsCall.swift */,
+				71C78B9529E9C38C00B08A83 /* AvailableCarsCall.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		71C78B8B29E9C18A00B08A83 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				71C78B9729E9C46600B08A83 /* CarsCore.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		71C78B8C29E9C19000B08A83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71C78B8F29E9C1D000B08A83 /* Car.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		76DD3A197999E6E79E396B88 /* Frameworks */ = {
@@ -655,6 +716,8 @@
 				71A4D33229DB567600BB4202 /* HomeCore.swift in Sources */,
 				71A4D34329DB5B3000BB4202 /* GoogleMapsService.swift in Sources */,
 				71A4D34129DB5B1600BB4202 /* GoogleMapsServiceProtocol.swift in Sources */,
+				71C78B9829E9C46600B08A83 /* CarsCore.swift in Sources */,
+				71C78B9A29E9C4DA00B08A83 /* DebounceID.swift in Sources */,
 				71A4D33029DB567600BB4202 /* HTTPError.swift in Sources */,
 				71890DD329E8888E00ADA3AF /* RegistrationCustomer.swift in Sources */,
 				71A4D33C29DB567600BB4202 /* RegisterView.swift in Sources */,
@@ -663,16 +726,20 @@
 				71A4D33E29DB567600BB4202 /* AppColor.swift in Sources */,
 				71A4D33A29DB567600BB4202 /* LoginView.swift in Sources */,
 				71A4D33D29DB567600BB4202 /* String+Extensions.swift in Sources */,
+				71C78B9229E9C24900B08A83 /* CarService.swift in Sources */,
 				7167EE5829E7683800CFAA02 /* SharedButton.swift in Sources */,
+				71C78B8E29E9C19F00B08A83 /* CarsView.swift in Sources */,
 				71A4D33829DB567600BB4202 /* LoginCore.swift in Sources */,
 				7122E15E29DB41C5002E1D4C /* ViewController.swift in Sources */,
 				7167EE5C29E76A8F00CFAA02 /* Token.swift in Sources */,
 				7167EE6329E76CA400CFAA02 /* LoginService.swift in Sources */,
 				71A4D33729DB567600BB4202 /* RegisterCore.swift in Sources */,
+				71C78B9629E9C38D00B08A83 /* AvailableCarsCall.swift in Sources */,
 				7167EE5E29E76BA100CFAA02 /* LoginCustomer.swift in Sources */,
 				71A054FC29DB6CA400726DE4 /* GoogleMapsViewController.swift in Sources */,
 				71A4D33929DB567600BB4202 /* Customer.swift in Sources */,
 				7122E15A29DB41C5002E1D4C /* AppDelegate.swift in Sources */,
+				71C78B9029E9C1D000B08A83 /* Car.swift in Sources */,
 				71A4D33429DB567600BB4202 /* AppView.swift in Sources */,
 				7167EE5A29E769E800CFAA02 /* Loadable.swift in Sources */,
 				71A4D32F29DB567600BB4202 /* HTTPMethod.swift in Sources */,
@@ -681,6 +748,7 @@
 				71A4D33B29DB567600BB4202 /* EntryView.swift in Sources */,
 				71A4D33529DB567600BB4202 /* AppCore.swift in Sources */,
 				71A4D33F29DB567600BB4202 /* SharedTextView.swift in Sources */,
+				71C78B9429E9C31600B08A83 /* AllCarsCall.swift in Sources */,
 				71A4D33629DB567600BB4202 /* EntryCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
