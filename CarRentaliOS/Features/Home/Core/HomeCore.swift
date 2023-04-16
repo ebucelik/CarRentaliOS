@@ -10,8 +10,6 @@ import ComposableArchitecture
 
 class HomeCore: ReducerProtocol {
     struct State: Equatable {
-        var accessToken: String = ""
-
         @BindingState
         var showToolbar: Bool = false
 
@@ -41,8 +39,7 @@ class HomeCore: ReducerProtocol {
             switch action {
             case .logout:
 
-                UserDefaults.standard.removeObject(forKey: "accessToken")
-                UserDefaults.standard.synchronize()
+                Token.removeTokenFromUserDefaults()
 
                 return .none
 
@@ -57,7 +54,10 @@ class HomeCore: ReducerProtocol {
             case .binding:
                 return .none
 
-            case .carAction:
+            case .carAction(.logout):
+                return .send(.logout)
+
+            default:
                 return .none
             }
         }

@@ -32,6 +32,7 @@ class CarsCore: ReducerProtocol {
         case onViewAppear
         case carsStateChanged(Loadable<[Car]>)
         case binding(BindingAction<State>)
+        case logout
     }
 
     @Dependency(\.carService) var service
@@ -53,7 +54,11 @@ class CarsCore: ReducerProtocol {
                     await send(.carsStateChanged(.loaded(cars)))
                 } catch: { error, send  in
                     if let httpError = error as? HTTPError {
-                        await send(.carsStateChanged(.error(httpError)))
+                        if case .unauthorized = httpError {
+                            await send(.logout)
+                        } else {
+                            await send(.carsStateChanged(.error(httpError)))
+                        }
                     } else {
                         await send(.carsStateChanged(.error(.unexpectedError)))
                     }
@@ -65,6 +70,9 @@ class CarsCore: ReducerProtocol {
                 return .none
 
             case .binding:
+                return .none
+
+            case .logout:
                 return .none
             }
         }

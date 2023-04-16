@@ -67,8 +67,7 @@ class LoginCore: ReducerProtocol {
                 state.tokenState = tokenState
 
                 if case let .loaded(token) = tokenState {
-                    UserDefaults.standard.set(token.token, forKey: "accessToken")
-                    UserDefaults.standard.synchronize()
+                    Token.saveTokenInUserDefaults(token)
 
                     return .send(.signedIn)
                 }

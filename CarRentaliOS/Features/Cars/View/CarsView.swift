@@ -155,7 +155,9 @@ struct CarsView: View {
         .listStyle(.plain)
         .background(Color.white)
         .refreshable {
-            viewStore.send(.onViewAppear)
+            DispatchQueue.main.async {
+                viewStore.send(.onViewAppear)
+            }
         }
     }
 }

@@ -8,23 +8,49 @@
 import Foundation
 
 public class APIClient {
+
+    private var token: Token? {
+        Token.getTokenFromUserDefaults()
+    }
+
+    private var repeatRequest = false
+
     func start<C: Call>(call: C) async throws -> C.Response {
-        let urlRequest = try composeUrlRequest(with: call)
+        repeat {
+            repeatRequest = false
 
-        let response = try await URLSession.shared.data(for: urlRequest)
+            let urlRequest = try composeUrlRequest(with: call)
 
-        if let httpResponse = response.1 as? HTTPURLResponse {
+            let response = try await URLSession.shared.data(for: urlRequest)
 
-            print("STATUS: \(httpResponse.statusCode)")
+            if let httpResponse = response.1 as? HTTPURLResponse {
 
-            if isSuccessStatusCode(httpResponse.statusCode) {
-                print("DATA: \(String(decoding: response.0, as: UTF8.self))")
+                print("STATUS: \(httpResponse.statusCode)")
 
-                return try JSONDecoder().decode(C.Response.self, from: response.0)
-            } else if httpResponse.statusCode == 401 {
-                throw HTTPError.unauthorized
+                if isSuccessStatusCode(httpResponse.statusCode) {
+                    print("DATA: \(String(decoding: response.0, as: UTF8.self))")
+
+                    return try JSONDecoder().decode(C.Response.self, from: response.0)
+                } else if httpResponse.statusCode == 401 {
+                    guard var token = self.token else {
+                        throw HTTPError.unauthorized
+                    }
+
+                    if call.body is RefreshToken {
+                        throw HTTPError.unauthorized
+                    }
+
+                    let refreshToken = RefreshToken(refreshToken: token.refreshToken)
+                    let refreshTokenCall = RefreshTokenCall(body: refreshToken)
+                    let accessToken = try await start(call: refreshTokenCall)
+
+                    token.accessToken = accessToken.accessToken
+                    Token.saveTokenInUserDefaults(token)
+
+                    repeatRequest = true
+                }
             }
-        }
+        } while repeatRequest
 
         throw HTTPError.unexpectedError
     }
@@ -51,8 +77,8 @@ extension APIClient {
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
 
-        if let accessToken = UserDefaults.standard.string(forKey: "accessToken") {
-            urlRequest.setValue(accessToken, forHTTPHeaderField: "Auth")
+        if let token = self.token {
+            urlRequest.setValue(token.accessToken, forHTTPHeaderField: "Auth")
         }
 
         if let body = call.body,
