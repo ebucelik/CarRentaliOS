@@ -28,6 +28,9 @@
 		7178A33329EC848A00BEC6C1 /* RefreshTokenCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178A33229EC848A00BEC6C1 /* RefreshTokenCall.swift */; };
 		7178A33529EC84B500BEC6C1 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178A33429EC84B500BEC6C1 /* AccessToken.swift */; };
 		7178A33729EC851200BEC6C1 /* RefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178A33629EC851200BEC6C1 /* RefreshToken.swift */; };
+		7178A33B29ECA47200BEC6C1 /* CurrencyCodeCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178A33A29ECA47200BEC6C1 /* CurrencyCodeCall.swift */; };
+		7178A33D29ECA49700BEC6C1 /* CurrencyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178A33C29ECA49700BEC6C1 /* CurrencyCode.swift */; };
+		7178A33F29ECA4F900BEC6C1 /* CurrencyCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178A33E29ECA4F900BEC6C1 /* CurrencyCodeService.swift */; };
 		71890DD329E8888E00ADA3AF /* RegistrationCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71890DD229E8888E00ADA3AF /* RegistrationCustomer.swift */; };
 		71890DD629E8894300ADA3AF /* RegisterCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71890DD529E8894300ADA3AF /* RegisterCall.swift */; };
 		71890DD829E88A0B00ADA3AF /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71890DD729E88A0B00ADA3AF /* RegisterService.swift */; };
@@ -105,6 +108,9 @@
 		7178A33229EC848A00BEC6C1 /* RefreshTokenCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenCall.swift; sourceTree = "<group>"; };
 		7178A33429EC84B500BEC6C1 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		7178A33629EC851200BEC6C1 /* RefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshToken.swift; sourceTree = "<group>"; };
+		7178A33A29ECA47200BEC6C1 /* CurrencyCodeCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCodeCall.swift; sourceTree = "<group>"; };
+		7178A33C29ECA49700BEC6C1 /* CurrencyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCode.swift; sourceTree = "<group>"; };
+		7178A33E29ECA4F900BEC6C1 /* CurrencyCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCodeService.swift; sourceTree = "<group>"; };
 		71890DD229E8888E00ADA3AF /* RegistrationCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCustomer.swift; sourceTree = "<group>"; };
 		71890DD529E8894300ADA3AF /* RegisterCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCall.swift; sourceTree = "<group>"; };
 		71890DD729E88A0B00ADA3AF /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
@@ -501,6 +507,8 @@
 				71C78B9129E9C24900B08A83 /* CarService.swift */,
 				71C78B9329E9C31600B08A83 /* AllCarsCall.swift */,
 				71C78B9529E9C38C00B08A83 /* AvailableCarsCall.swift */,
+				7178A33A29ECA47200BEC6C1 /* CurrencyCodeCall.swift */,
+				7178A33E29ECA4F900BEC6C1 /* CurrencyCodeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -517,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				71C78B8F29E9C1D000B08A83 /* Car.swift */,
+				7178A33C29ECA49700BEC6C1 /* CurrencyCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -730,6 +739,7 @@
 				71A4D33329DB567600BB4202 /* HomeView.swift in Sources */,
 				71A4D33129DB567600BB4202 /* Call.swift in Sources */,
 				71D42B0E29DB73A800C722AC /* ViewControllerRepresentable.swift in Sources */,
+				7178A33B29ECA47200BEC6C1 /* CurrencyCodeCall.swift in Sources */,
 				71A4D33229DB567600BB4202 /* HomeCore.swift in Sources */,
 				71A4D34329DB5B3000BB4202 /* GoogleMapsService.swift in Sources */,
 				71A4D34129DB5B1600BB4202 /* GoogleMapsServiceProtocol.swift in Sources */,
@@ -765,11 +775,13 @@
 				71890DD629E8894300ADA3AF /* RegisterCall.swift in Sources */,
 				7122E15C29DB41C5002E1D4C /* SceneDelegate.swift in Sources */,
 				71A4D33B29DB567600BB4202 /* EntryView.swift in Sources */,
+				7178A33D29ECA49700BEC6C1 /* CurrencyCode.swift in Sources */,
 				71A4D33529DB567600BB4202 /* AppCore.swift in Sources */,
 				71A4D33F29DB567600BB4202 /* SharedTextView.swift in Sources */,
 				71C78B9429E9C31600B08A83 /* AllCarsCall.swift in Sources */,
 				71A4D33629DB567600BB4202 /* EntryCore.swift in Sources */,
 				7178A33529EC84B500BEC6C1 /* AccessToken.swift in Sources */,
+				7178A33F29ECA4F900BEC6C1 /* CurrencyCodeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

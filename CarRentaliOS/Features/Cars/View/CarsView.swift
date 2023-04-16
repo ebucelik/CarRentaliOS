@@ -51,25 +51,40 @@ struct CarsView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Picker(
-                            "Currency",
-                            selection: viewStore.binding(\.$selectedCurrency)
-                        ) {
-                            ForEach(viewStore.mockedCurrencies, id: \.self) { currencyCode in
-                                Text(currencyCode)
+                        switch viewStore.currencyCodeState {
+                        case let .loaded(currencyCode):
+                            Picker(
+                                "Currency",
+                                selection: viewStore.binding(\.$selectedCurrency)
+                            ) {
+                                ForEach(currencyCode.currencyCodes, id: \.self) { code in
+                                    Text(code)
+                                }
                             }
+                            .pickerStyle(.menu)
+
+                        case .none, .loading:
+                            ProgressView()
+                                .progressViewStyle(.circular)
+
+                        case .error:
+                            Image(systemSymbol: .xmarkCircleFill)
                         }
-                        .pickerStyle(.menu)
                     }
                 }
                 .onChange(of: viewStore.selectedCurrency) { _ in
-                    viewStore.send(.onViewAppear)
+                    viewStore.send(.loadCars)
                 }
                 .onChange(of: viewStore.startDate) { _ in
-                    viewStore.send(.onViewAppear)
+                    viewStore.send(.loadCars)
                 }
                 .onChange(of: viewStore.endDate) { _ in
-                    viewStore.send(.onViewAppear)
+                    viewStore.send(.loadCars)
+                }
+                .onChange(of: viewStore.needsRefresh) { needsRefresh in
+                    if needsRefresh {
+                        viewStore.send(.onViewAppear)
+                    }
                 }
             }
         }
@@ -156,7 +171,7 @@ struct CarsView: View {
         .background(Color.white)
         .refreshable {
             DispatchQueue.main.async {
-                viewStore.send(.onViewAppear)
+                viewStore.send(.loadCars)
             }
         }
     }

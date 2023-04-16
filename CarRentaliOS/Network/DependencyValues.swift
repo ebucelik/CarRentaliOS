@@ -28,6 +28,11 @@ extension DependencyValues {
         get { self[CarService.self] }
         set{ self[CarService.self] = newValue }
     }
+
+    var currencyCodesService: CurrencyCodeService {
+        get { self[CurrencyCodeService.self] }
+        set { self[CurrencyCodeService.self] = newValue }
+    }
 }
 
 extension DispatchQueue: DependencyKey {

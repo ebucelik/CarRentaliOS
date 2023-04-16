@@ -39,7 +39,7 @@ class AppCore: ReducerProtocol {
                 return .send(.home(.none))
 
             case .home(.none):
-                state.homeState = HomeCore.State()
+                state.homeState.carsState.needsRefresh = true
                 state.showEntry = false
 
                 return .none
