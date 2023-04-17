@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Car: Codable, Equatable {
+struct Car: Codable, Equatable, Hashable {
     let id: Int
     let dailyCost: Float
     let brand: String
@@ -16,10 +16,15 @@ struct Car: Codable, Equatable {
     let buildDate: String // "2023-05-22"
     let fuelType: String
     let imageLink: String
+    let totalCosts: Float
 }
 
 extension Car {
     var dailyCostString: String {
         return String(format: "%.2f", dailyCost)
+    }
+
+    var totalCostString: String {
+        return String(format: "%.2f", totalCosts)
     }
 }

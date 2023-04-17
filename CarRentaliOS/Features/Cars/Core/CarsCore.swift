@@ -25,14 +25,18 @@ class CarsCore: ReducerProtocol {
 
         var needsRefresh = false
 
+        var carDetailState: CarDetailCore.State?
+
         init(currentCurrency: String = "EUR",
              chosenCurrency: String = "USD",
              carsState: Loadable<[Car]> = .none,
-             currencyCodeState: Loadable<CurrencyCode> = .none) {
+             currencyCodeState: Loadable<CurrencyCode> = .none,
+             carDetailState: CarDetailCore.State? = nil) {
             self.currentCurrency = currentCurrency
             self.chosenCurrency = chosenCurrency
             self.carsState = carsState
             self.currencyCodeState = currencyCodeState
+            self.carDetailState = carDetailState
         }
     }
 
@@ -43,7 +47,11 @@ class CarsCore: ReducerProtocol {
         case carsStateChanged(Loadable<[Car]>)
         case currencyCodeStateChanged(Loadable<CurrencyCode>)
         case binding(BindingAction<State>)
+        case navigateToCarDetails(Car)
+        case resetCarDetailState
         case logout
+
+        case carDetail(CarDetailCore.Action)
     }
 
     @Dependency(\.carService) var service
@@ -73,10 +81,8 @@ class CarsCore: ReducerProtocol {
 
                     try await self.clock.sleep(for: .seconds(1))
 
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    let fromDate = dateFormatter.string(from: startDate)
-                    let toDate = dateFormatter.string(from: endDate)
+                    let fromDate = startDate.getStringFormattedDate()
+                    let toDate = endDate.getStringFormattedDate()
 
                     let cars = try await self.service.getAvailableCars(
                         currentCurrency: currentCurrency,
@@ -139,9 +145,36 @@ class CarsCore: ReducerProtocol {
             case .binding:
                 return .none
 
+            case let .navigateToCarDetails(car):
+                state.carDetailState = CarDetailCore.State(
+                    car: car,
+                    chosenCurrency: state.chosenCurrency,
+                    startDate: state.startDate.getStringFormattedDate(),
+                    endDate: state.endDate.getStringFormattedDate()
+                )
+
+                return .none
+
             case .logout:
                 return .none
+
+            case .carDetail(.viewDismissed):
+                return .send(.loadCars)
+
+            case .resetCarDetailState:
+                state.carDetailState = nil
+
+                return .none
+
+            case .carDetail(.logout):
+                return .send(.logout)
+
+            default:
+                return .none
             }
+        }
+        .ifLet(\.carDetailState, action: /Action.carDetail) {
+            CarDetailCore()
         }
     }
 }

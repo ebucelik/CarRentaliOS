@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CurrencyCode: Codable, Equatable {
+struct CurrencyCode: Codable, Equatable, Hashable {
     let currencyCodes: [String]
 }

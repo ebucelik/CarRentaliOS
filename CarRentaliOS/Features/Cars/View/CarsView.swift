@@ -46,8 +46,10 @@ struct CarsView: View {
                     if case .error = viewStore.carsState {
                         viewStore.send(.onViewAppear)
                     }
+
+                    viewStore.send(.resetCarDetailState)
                 }
-                .navigationTitle("Cars")
+                .navigationTitle("Available Cars")
                 .navigationBarTitleDisplayMode(.inline)
                 .onChange(of: viewStore.currentCurrency) { _ in
                     viewStore.send(.loadCars)
@@ -140,54 +142,72 @@ struct CarsView: View {
     private func carsBody(_ viewStore: ViewStoreOf<CarsCore>, cars: [Car]) -> some View {
         List {
             ForEach(cars, id: \.id) { car in
-                HStack {
-                    AsyncImage(url: URL(string: car.imageLink)) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 125, maxHeight: 125)
-                    } placeholder: {
-                        Color
-                            .gray
-                            .frame(maxWidth: 125, maxHeight: 125)
-                    }
+                NavigationLink(
+                    destination: IfLetStore(
+                        store.scope(
+                            state: \.carDetailState,
+                            action: CarsCore.Action.carDetail
+                        )
+                    ) { store in
+                        CarDetailView(
+                            store: store
+                        )
+                    },
+                    tag: car,
+                    selection: viewStore.binding(
+                        get: \.carDetailState?.car,
+                        send: CarsCore.Action.navigateToCarDetails(car)
+                    )
+                ) {
+                    HStack {
+                        AsyncImage(url: URL(string: car.imageLink)) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: 125, maxHeight: 125)
+                        } placeholder: {
+                            Color
+                                .gray
+                                .frame(maxWidth: 125, maxHeight: 125)
+                        }
 
-                    VStack(alignment: .leading) {
-                        Text(car.model)
-                            .font(.title2)
-                            .bold()
+                        VStack(alignment: .leading) {
+                            Text(car.model)
+                                .font(.title2)
+                                .bold()
 
-                        Text(car.brand)
-                            .font(.headline)
-
-                        Spacer()
-
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("\(car.fuelType)")
-                                    .font(.caption)
-
-                                Text("\(car.hp) hp")
-                                    .font(.caption)
-
-                                Text("\(car.buildDate)")
-                                    .font(.caption)
-                            }
+                            Text(car.brand)
+                                .font(.headline)
 
                             Spacer()
 
-                            VStack(alignment: .trailing, spacing: 1) {
-                                Text("\(car.dailyCostString)")
-                                    .font(.largeTitle)
-                                    .bold()
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text("\(car.fuelType)")
+                                        .font(.caption)
 
-                                Text("per day")
-                                    .font(.caption)
+                                    Text("\(car.hp) hp")
+                                        .font(.caption)
+
+                                    Text("\(car.buildDate)")
+                                        .font(.caption)
+                                }
+
+                                Spacer()
+
+                                VStack(alignment: .trailing, spacing: 1) {
+                                    Text("\(car.dailyCostString)")
+                                        .font(.largeTitle)
+                                        .bold()
+
+                                    Text("\(viewStore.chosenCurrency) per day")
+                                        .font(.caption)
+                                }
                             }
                         }
                     }
+                    .padding(.vertical)
                 }
-                .padding(.vertical)
             }
         }
         .frame(maxWidth: .infinity)

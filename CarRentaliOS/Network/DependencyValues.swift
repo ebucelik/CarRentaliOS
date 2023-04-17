@@ -33,6 +33,11 @@ extension DependencyValues {
         get { self[CurrencyCodeService.self] }
         set { self[CurrencyCodeService.self] = newValue }
     }
+
+    var rentCarService: RentCarService {
+        get { self[RentCarService.self] }
+        set { self[RentCarService.self] = newValue }
+    }
 }
 
 extension DispatchQueue: DependencyKey {
