@@ -49,30 +49,10 @@ struct CarsView: View {
                 }
                 .navigationTitle("Cars")
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        switch viewStore.currencyCodeState {
-                        case let .loaded(currencyCode):
-                            Picker(
-                                "Currency",
-                                selection: viewStore.binding(\.$selectedCurrency)
-                            ) {
-                                ForEach(currencyCode.currencyCodes, id: \.self) { code in
-                                    Text(code)
-                                }
-                            }
-                            .pickerStyle(.menu)
-
-                        case .none, .loading:
-                            ProgressView()
-                                .progressViewStyle(.circular)
-
-                        case .error:
-                            Image(systemSymbol: .xmarkCircleFill)
-                        }
-                    }
+                .onChange(of: viewStore.currentCurrency) { _ in
+                    viewStore.send(.loadCars)
                 }
-                .onChange(of: viewStore.selectedCurrency) { _ in
+                .onChange(of: viewStore.chosenCurrency) { _ in
                     viewStore.send(.loadCars)
                 }
                 .onChange(of: viewStore.startDate) { _ in
@@ -93,21 +73,65 @@ struct CarsView: View {
     @ViewBuilder
     private func carsHeader(_ viewStore: ViewStoreOf<CarsCore>) -> some View {
         HStack {
+            VStack(alignment: .leading) {
+                DatePicker(
+                    "Start:",
+                    selection: viewStore.binding(\.$startDate),
+                    displayedComponents: .date
+                )
+                .frame(maxWidth: 150)
+                .clipped()
+
+                DatePicker(
+                    "End:",
+                    selection: viewStore.binding(\.$endDate),
+                    displayedComponents: .date
+                )
+                .frame(maxWidth: 150)
+                .clipped()
+            }
+
             Spacer()
 
-            DatePicker(
-                "From:",
-                selection: viewStore.binding(\.$startDate),
-                displayedComponents: .date
-            )
+            switch viewStore.currencyCodeState {
+            case let .loaded(currencyCode):
+                VStack(alignment: .trailing) {
+                    HStack {
+                        Text("From:")
 
-            DatePicker(
-                "To:",
-                selection: viewStore.binding(\.$endDate),
-                displayedComponents: .date
-            )
+                        Picker(
+                            "Currency",
+                            selection: viewStore.binding(\.$currentCurrency)
+                        ) {
+                            ForEach(currencyCode.currencyCodes, id: \.self) { code in
+                                Text(code)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                    }
 
-            Spacer()
+                    HStack {
+                        Text("To:")
+
+                        Picker(
+                            "Currency",
+                            selection: viewStore.binding(\.$chosenCurrency)
+                        ) {
+                            ForEach(currencyCode.currencyCodes, id: \.self) { code in
+                                Text(code)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                    }
+                }
+
+            case .none, .loading:
+                ProgressView()
+                    .progressViewStyle(.circular)
+
+            case .error:
+                Image(systemSymbol: .xmarkCircleFill)
+            }
         }
         .padding(.horizontal)
     }

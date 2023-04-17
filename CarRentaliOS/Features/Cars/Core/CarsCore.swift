@@ -7,11 +7,14 @@
 
 import Foundation
 import ComposableArchitecture
+import Clocks
 
 class CarsCore: ReducerProtocol {
     struct State: Equatable {
         @BindingState
-        var selectedCurrency: String
+        var currentCurrency: String
+        @BindingState
+        var chosenCurrency: String
         @BindingState
         var startDate: Date = Date.now
         @BindingState
@@ -22,10 +25,12 @@ class CarsCore: ReducerProtocol {
 
         var needsRefresh = false
 
-        init(selectedCurrency: String = "USD",
+        init(currentCurrency: String = "EUR",
+             chosenCurrency: String = "USD",
              carsState: Loadable<[Car]> = .none,
              currencyCodeState: Loadable<CurrencyCode> = .none) {
-            self.selectedCurrency = selectedCurrency
+            self.currentCurrency = currentCurrency
+            self.chosenCurrency = chosenCurrency
             self.carsState = carsState
             self.currencyCodeState = currencyCodeState
         }
@@ -44,6 +49,7 @@ class CarsCore: ReducerProtocol {
     @Dependency(\.carService) var service
     @Dependency(\.currencyCodesService) var currencyCodesService
     @Dependency(\.mainScheduler) var mainScheduler
+    @Dependency(\.continuousClock) var clock
 
     var body: some ReducerProtocol<State, Action> {
         BindingReducer()
@@ -59,12 +65,13 @@ class CarsCore: ReducerProtocol {
                 ])
 
             case .loadCars:
-                return .run { [selectedCurrency = state.selectedCurrency,
+                return .run { [currentCurrency = state.currentCurrency,
+                               chosenCurrency = state.chosenCurrency,
                                startDate = state.startDate,
                                endDate = state.endDate] send in
                     await send(.carsStateChanged(.loading))
 
-                    try await Task.sleep(for: .seconds(1))
+                    try await self.clock.sleep(for: .seconds(1))
 
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -72,7 +79,8 @@ class CarsCore: ReducerProtocol {
                     let toDate = dateFormatter.string(from: endDate)
 
                     let cars = try await self.service.getAvailableCars(
-                        currency: selectedCurrency,
+                        currentCurrency: currentCurrency,
+                        chosenCurrency: chosenCurrency,
                         startDate: fromDate,
                         endDate: toDate
                     )
@@ -94,7 +102,7 @@ class CarsCore: ReducerProtocol {
                 return .run { send in
                     await send(.currencyCodeStateChanged(.loading))
 
-                    try await Task.sleep(for: .seconds(1))
+                    try await self.clock.sleep(for: .seconds(1))
 
                     let currencyCode = try await self.currencyCodesService.getCurrencyCodes()
 
@@ -118,6 +126,13 @@ class CarsCore: ReducerProtocol {
 
             case let .currencyCodeStateChanged(currencyCodeState):
                 state.currencyCodeState = currencyCodeState
+
+                if case let .loaded(currencyCode) = currencyCodeState {
+                    let currencyCodesWithEUR = ["EUR"] + currencyCode.currencyCodes
+
+                    let currencyCodeWithEUR = CurrencyCode(currencyCodes: currencyCodesWithEUR)
+                    state.currencyCodeState = .loaded(currencyCodeWithEUR)
+                }
 
                 return .none
 
