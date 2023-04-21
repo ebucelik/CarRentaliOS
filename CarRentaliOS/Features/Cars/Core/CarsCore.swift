@@ -46,6 +46,7 @@ class CarsCore: ReducerProtocol {
         case loadCurrencyCode
         case carsStateChanged(Loadable<[Car]>)
         case currencyCodeStateChanged(Loadable<CurrencyCode>)
+        case currencyCodeChosen
         case binding(BindingAction<State>)
         case navigateToCarDetails(Car)
         case resetCarDetailState
@@ -140,6 +141,9 @@ class CarsCore: ReducerProtocol {
                     state.currencyCodeState = .loaded(currencyCodeWithEUR)
                 }
 
+                return .none
+
+            case .currencyCodeChosen:
                 return .none
 
             case .binding:

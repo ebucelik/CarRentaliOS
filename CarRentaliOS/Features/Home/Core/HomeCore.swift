@@ -13,7 +13,10 @@ class HomeCore: ReducerProtocol {
         @BindingState
         var showToolbar: Bool = false
 
+        var currentCurrency: String = "USD"
+
         var carsState: CarsCore.State = CarsCore.State()
+        var rentalState: RentalCore.State = RentalCore.State()
     }
 
     enum Action: BindableAction {
@@ -23,6 +26,7 @@ class HomeCore: ReducerProtocol {
         case binding(BindingAction<State>)
 
         case carAction(CarsCore.Action)
+        case rentalAction(RentalCore.Action)
     }
 
     var body: some ReducerProtocol<State, Action> {
@@ -33,6 +37,13 @@ class HomeCore: ReducerProtocol {
             action: /HomeCore.Action.carAction
         ) {
             CarsCore()
+        }
+        
+        Scope(
+            state: \.rentalState,
+            action: /HomeCore.Action.rentalAction
+        ) {
+            RentalCore()
         }
 
         Reduce { state, action in
@@ -54,8 +65,14 @@ class HomeCore: ReducerProtocol {
             case .binding:
                 return .none
 
-            case .carAction(.logout):
+            case .carAction(.logout), .rentalAction(.logout):
                 return .send(.logout)
+
+            case .carAction(.currencyCodeChosen):
+                state.currentCurrency = state.carsState.chosenCurrency
+                state.rentalState.currentCurrency = state.currentCurrency
+
+                return .none
 
             default:
                 return .none

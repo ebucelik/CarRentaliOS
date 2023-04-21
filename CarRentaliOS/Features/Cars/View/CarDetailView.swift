@@ -67,7 +67,7 @@ struct CarDetailView: View {
             switch viewStore.rentCarState {
             case .loaded:
                 HStack {
-                    SharedButton(title: "Rent \(viewStore.car.brand)")
+                    SharedButton(title: "Rent \(viewStore.car.brand) for \(viewStore.car.totalCosts) \(viewStore.chosenCurrency)")
 
                     Image(systemSymbol: .checkmarkCircleFill)
                         .foregroundColor(AppColor.blue)
@@ -81,7 +81,7 @@ struct CarDetailView: View {
 
             case .none, .error:
                 SharedButton(
-                    title: "Rent \(viewStore.car.brand)",
+                    title: "Rent \(viewStore.car.brand) for \(viewStore.car.totalCosts) \(viewStore.chosenCurrency)",
                     isError: viewStore.isError
                 ) {
                     viewStore.send(.rentCar)
@@ -120,7 +120,7 @@ struct CarDetailView: View {
 
                     Spacer()
 
-                    Text("\(viewStore.car.dailyCostString) \(viewStore.chosenCurrency)")
+                    Text("\(viewStore.car.dailyCost.toString) \(viewStore.chosenCurrency)")
                 }
                 .padding()
 
@@ -130,7 +130,7 @@ struct CarDetailView: View {
 
                     Spacer()
 
-                    Text("\(viewStore.car.totalCostString) \(viewStore.chosenCurrency)")
+                    Text("\(viewStore.car.totalCosts.toString) \(viewStore.chosenCurrency)")
                 }
                 .padding()
             }

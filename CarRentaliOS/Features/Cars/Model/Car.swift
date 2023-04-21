@@ -18,13 +18,3 @@ struct Car: Codable, Equatable, Hashable {
     let imageLink: String
     let totalCosts: Float
 }
-
-extension Car {
-    var dailyCostString: String {
-        return String(format: "%.2f", dailyCost)
-    }
-
-    var totalCostString: String {
-        return String(format: "%.2f", totalCosts)
-    }
-}

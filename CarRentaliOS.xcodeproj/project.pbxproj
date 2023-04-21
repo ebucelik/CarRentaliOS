@@ -24,6 +24,12 @@
 		7122E17D29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */; };
 		7122E1C629DB436C002E1D4C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7122E1C529DB436C002E1D4C /* ComposableArchitecture */; };
 		7122E1C929DB4392002E1D4C /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 7122E1C829DB4392002E1D4C /* SFSafeSymbols */; };
+		7135B6A329F260B6000D06FA /* RentalCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6A229F260B6000D06FA /* RentalCore.swift */; };
+		7135B6A529F2616D000D06FA /* RentalCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6A429F2616D000D06FA /* RentalCall.swift */; };
+		7135B6A729F2617D000D06FA /* Rental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6A629F2617D000D06FA /* Rental.swift */; };
+		7135B6A929F261F9000D06FA /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6A829F261F9000D06FA /* Float+Extensions.swift */; };
+		7135B6AB29F262A1000D06FA /* RentalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6AA29F262A1000D06FA /* RentalService.swift */; };
+		7135B6AD29F2673E000D06FA /* RentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6AC29F2673E000D06FA /* RentalView.swift */; };
 		7167EE5829E7683800CFAA02 /* SharedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5729E7683800CFAA02 /* SharedButton.swift */; };
 		7167EE5A29E769E800CFAA02 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5929E769E800CFAA02 /* Loadable.swift */; };
 		7167EE5C29E76A8F00CFAA02 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5B29E76A8F00CFAA02 /* Token.swift */; };
@@ -110,6 +116,12 @@
 		7122E17629DB41C6002E1D4C /* CarRentaliOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentaliOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITests.swift; sourceTree = "<group>"; };
 		7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7135B6A229F260B6000D06FA /* RentalCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalCore.swift; sourceTree = "<group>"; };
+		7135B6A429F2616D000D06FA /* RentalCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalCall.swift; sourceTree = "<group>"; };
+		7135B6A629F2617D000D06FA /* Rental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rental.swift; sourceTree = "<group>"; };
+		7135B6A829F261F9000D06FA /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
+		7135B6AA29F262A1000D06FA /* RentalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalService.swift; sourceTree = "<group>"; };
+		7135B6AC29F2673E000D06FA /* RentalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalView.swift; sourceTree = "<group>"; };
 		7167EE5729E7683800CFAA02 /* SharedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedButton.swift; sourceTree = "<group>"; };
 		7167EE5929E769E800CFAA02 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		7167EE5B29E76A8F00CFAA02 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -197,6 +209,9 @@
 		711FC4DF29EDB92B001A81DD /* Rental */ = {
 			isa = PBXGroup;
 			children = (
+				7135B6A129F260A9000D06FA /* Model */,
+				7135B6A029F2609C000D06FA /* Core */,
+				7135B69F29F26095000D06FA /* View */,
 				711FC4E029EDB931001A81DD /* Service */,
 			);
 			path = Rental;
@@ -205,6 +220,8 @@
 		711FC4E029EDB931001A81DD /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7135B6A429F2616D000D06FA /* RentalCall.swift */,
+				7135B6AA29F262A1000D06FA /* RentalService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -283,6 +300,30 @@
 				7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */,
 			);
 			path = CarRentaliOSUITests;
+			sourceTree = "<group>";
+		};
+		7135B69F29F26095000D06FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7135B6AC29F2673E000D06FA /* RentalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7135B6A029F2609C000D06FA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7135B6A229F260B6000D06FA /* RentalCore.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7135B6A129F260A9000D06FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7135B6A629F2617D000D06FA /* Rental.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7167EE6129E76C9500CFAA02 /* Login */ = {
@@ -503,6 +544,7 @@
 			children = (
 				71A4D32829DB567600BB4202 /* String+Extensions.swift */,
 				711FC4E929EDDED2001A81DD /* Date+Extensions.swift */,
+				7135B6A829F261F9000D06FA /* Float+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -784,11 +826,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7135B6A329F260B6000D06FA /* RentalCore.swift in Sources */,
 				711FC4DE29EDB8D0001A81DD /* CarDetailCore.swift in Sources */,
 				7167EE6529E76D5F00CFAA02 /* DependencyValues.swift in Sources */,
 				71890DD829E88A0B00ADA3AF /* RegisterService.swift in Sources */,
+				7135B6AD29F2673E000D06FA /* RentalView.swift in Sources */,
 				711FC4DC29EDB874001A81DD /* CarDetailView.swift in Sources */,
 				71A4D33329DB567600BB4202 /* HomeView.swift in Sources */,
+				7135B6A929F261F9000D06FA /* Float+Extensions.swift in Sources */,
 				71A4D33129DB567600BB4202 /* Call.swift in Sources */,
 				71D42B0E29DB73A800C722AC /* ViewControllerRepresentable.swift in Sources */,
 				7178A33B29ECA47200BEC6C1 /* CurrencyCodeCall.swift in Sources */,
@@ -797,6 +842,7 @@
 				71A4D34129DB5B1600BB4202 /* GoogleMapsServiceProtocol.swift in Sources */,
 				711FC4EA29EDDED2001A81DD /* Date+Extensions.swift in Sources */,
 				7178A33329EC848A00BEC6C1 /* RefreshTokenCall.swift in Sources */,
+				7135B6AB29F262A1000D06FA /* RentalService.swift in Sources */,
 				71C78B9829E9C46600B08A83 /* CarsCore.swift in Sources */,
 				71C78B9A29E9C4DA00B08A83 /* DebounceID.swift in Sources */,
 				71A4D33029DB567600BB4202 /* HTTPError.swift in Sources */,
@@ -818,8 +864,10 @@
 				7178A33729EC851200BEC6C1 /* RefreshToken.swift in Sources */,
 				71A4D33729DB567600BB4202 /* RegisterCore.swift in Sources */,
 				71C78B9629E9C38D00B08A83 /* AvailableCarsCall.swift in Sources */,
+				7135B6A729F2617D000D06FA /* Rental.swift in Sources */,
 				7167EE5E29E76BA100CFAA02 /* LoginCustomer.swift in Sources */,
 				71A054FC29DB6CA400726DE4 /* GoogleMapsViewController.swift in Sources */,
+				7135B6A529F2616D000D06FA /* RentalCall.swift in Sources */,
 				71A4D33929DB567600BB4202 /* Customer.swift in Sources */,
 				711FC4E429EDB9D5001A81DD /* RentCar.swift in Sources */,
 				7122E15A29DB41C5002E1D4C /* AppDelegate.swift in Sources */,

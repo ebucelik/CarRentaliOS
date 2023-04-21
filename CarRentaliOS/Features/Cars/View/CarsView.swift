@@ -56,6 +56,7 @@ struct CarsView: View {
                 }
                 .onChange(of: viewStore.chosenCurrency) { _ in
                     viewStore.send(.loadCars)
+                    viewStore.send(.currencyCodeChosen)
                 }
                 .onChange(of: viewStore.startDate) { _ in
                     viewStore.send(.loadCars)
@@ -196,7 +197,7 @@ struct CarsView: View {
                                 Spacer()
 
                                 VStack(alignment: .trailing, spacing: 1) {
-                                    Text("\(car.dailyCostString)")
+                                    Text("\(car.dailyCost.toString)")
                                         .font(.largeTitle)
                                         .bold()
 

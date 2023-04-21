@@ -26,10 +26,15 @@ struct HomeView: View {
                     Label("Cars", systemSymbol: .carFill)
                 }
 
-                Text("Rentals")
-                    .tabItem {
-                        Label("Rentals", systemSymbol: .squareAndArrowDownFill)
-                    }
+                RentalView(
+                    store: store.scope(
+                        state: \.rentalState,
+                        action: HomeCore.Action.rentalAction
+                    )
+                )
+                .tabItem {
+                    Label("Rentals", systemSymbol: .squareAndArrowDownFill)
+                }
 
                 ViewControllerRepresentable(
                     viewController: GoogleMapsViewController()
