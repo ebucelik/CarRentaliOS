@@ -27,7 +27,7 @@ class CarsCore: ReducerProtocol {
 
         var carDetailState: CarDetailCore.State?
 
-        init(currentCurrency: String = "EUR",
+        init(currentCurrency: String = "USD",
              chosenCurrency: String = "USD",
              carsState: Loadable<[Car]> = .none,
              currencyCodeState: Loadable<CurrencyCode> = .none,

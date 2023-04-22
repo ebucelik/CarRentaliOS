@@ -100,21 +100,7 @@ struct CarsView: View {
             case let .loaded(currencyCode):
                 VStack(alignment: .trailing) {
                     HStack {
-                        Text("From:")
-
-                        Picker(
-                            "Currency",
-                            selection: viewStore.binding(\.$currentCurrency)
-                        ) {
-                            ForEach(currencyCode.currencyCodes, id: \.self) { code in
-                                Text(code)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                    }
-
-                    HStack {
-                        Text("To:")
+                        Text("Currency:")
 
                         Picker(
                             "Currency",
