@@ -30,6 +30,8 @@
 		7135B6A929F261F9000D06FA /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6A829F261F9000D06FA /* Float+Extensions.swift */; };
 		7135B6AB29F262A1000D06FA /* RentalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6AA29F262A1000D06FA /* RentalService.swift */; };
 		7135B6AD29F2673E000D06FA /* RentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135B6AC29F2673E000D06FA /* RentalView.swift */; };
+		7165C57129F542BD00713BAA /* DeleteRentalCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C57029F542BD00713BAA /* DeleteRentalCall.swift */; };
+		7165C57329F5436B00713BAA /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165C57229F5436B00713BAA /* Empty.swift */; };
 		7167EE5829E7683800CFAA02 /* SharedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5729E7683800CFAA02 /* SharedButton.swift */; };
 		7167EE5A29E769E800CFAA02 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5929E769E800CFAA02 /* Loadable.swift */; };
 		7167EE5C29E76A8F00CFAA02 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167EE5B29E76A8F00CFAA02 /* Token.swift */; };
@@ -122,6 +124,8 @@
 		7135B6A829F261F9000D06FA /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
 		7135B6AA29F262A1000D06FA /* RentalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalService.swift; sourceTree = "<group>"; };
 		7135B6AC29F2673E000D06FA /* RentalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalView.swift; sourceTree = "<group>"; };
+		7165C57029F542BD00713BAA /* DeleteRentalCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRentalCall.swift; sourceTree = "<group>"; };
+		7165C57229F5436B00713BAA /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		7167EE5729E7683800CFAA02 /* SharedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedButton.swift; sourceTree = "<group>"; };
 		7167EE5929E769E800CFAA02 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		7167EE5B29E76A8F00CFAA02 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 			children = (
 				7135B6A429F2616D000D06FA /* RentalCall.swift */,
 				7135B6AA29F262A1000D06FA /* RentalService.swift */,
+				7165C57029F542BD00713BAA /* DeleteRentalCall.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				7135B6A629F2617D000D06FA /* Rental.swift */,
+				7165C57229F5436B00713BAA /* Empty.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -847,9 +853,11 @@
 				71C78B9A29E9C4DA00B08A83 /* DebounceID.swift in Sources */,
 				71A4D33029DB567600BB4202 /* HTTPError.swift in Sources */,
 				71890DD329E8888E00ADA3AF /* RegistrationCustomer.swift in Sources */,
+				7165C57329F5436B00713BAA /* Empty.swift in Sources */,
 				71A4D33C29DB567600BB4202 /* RegisterView.swift in Sources */,
 				71A4D32E29DB567600BB4202 /* APIClient.swift in Sources */,
 				7167EE6029E76BFE00CFAA02 /* LoginCall.swift in Sources */,
+				7165C57129F542BD00713BAA /* DeleteRentalCall.swift in Sources */,
 				71A4D33E29DB567600BB4202 /* AppColor.swift in Sources */,
 				71A4D33A29DB567600BB4202 /* LoginView.swift in Sources */,
 				71A4D33D29DB567600BB4202 /* String+Extensions.swift in Sources */,

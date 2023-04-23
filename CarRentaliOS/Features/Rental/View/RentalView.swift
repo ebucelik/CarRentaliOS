@@ -35,10 +35,33 @@ struct RentalView: View {
             switch viewStore.rentalState {
             case let .loaded(rentals):
                 List {
-                    ForEach(rentals, id: \.id) { rental in
-                        HStack {
-                            Text(rental.startDay)
-                            Text(rental.endDay)
+                    if rentals.isEmpty {
+                        Text("You don't have any rentals.")
+                    } else {
+                        ForEach(rentals, id: \.id) { rental in
+                            HStack(alignment: .top) {
+                                Text("CarId: \(rental.carId)")
+                                    .font(.headline)
+                                    .bold()
+
+                                VStack {
+                                    Text("From: \(rental.startDay)")
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                    Text("To: \(rental.endDay)")
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                }
+                            }
+                            .alert("Cancel \(rental.id)",
+                                   isPresented: viewStore.binding(\.$showAlert),
+                                   presenting: rental) { rental in
+                                Button("Cancel Rental") { viewStore.send(.deleteRental(rental.id)) }
+                                Button("Cancel", role: .cancel) { }
+                            } message: { rental in
+                                Text("Do you really want to cancel your rental with id \(rental.id)?")
+                            }
+                        }
+                        .onDelete { indexSet in
+                            delete(at: indexSet, viewStore)
                         }
                     }
                 }
@@ -59,5 +82,9 @@ struct RentalView: View {
                 Text("Error while loading rentals.")
             }
         }
+    }
+
+    private func delete(at offsets: IndexSet, _ viewStore: ViewStoreOf<RentalCore>) {
+        viewStore.send(.showAlert)
     }
 }

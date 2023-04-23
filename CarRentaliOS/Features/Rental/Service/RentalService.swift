@@ -10,6 +10,8 @@ import ComposableArchitecture
 
 protocol RentalServiceProtocol {
     func getAllRentals(for currentCurrency: String) async throws -> [Rental]
+
+    func deleteRental(with id: Int) async throws -> Empty
 }
 
 class RentalService: APIClient, RentalServiceProtocol {
@@ -21,6 +23,12 @@ class RentalService: APIClient, RentalServiceProtocol {
         )
 
         return try await start(call: rentalCall)
+    }
+
+    func deleteRental(with id: Int) async throws -> Empty {
+        let deleteRentalCall = DeleteRentalCall(id: id)
+
+        return try await start(call: deleteRentalCall)
     }
 }
 

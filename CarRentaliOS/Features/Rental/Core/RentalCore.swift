@@ -11,18 +11,28 @@ class RentalCore: ReducerProtocol {
     struct State: Equatable {
         var currentCurrency: String
         var rentalState: Loadable<[Rental]>
+        var deleteRentalState: Loadable<Empty>
+
+        @BindingState
+        var showAlert: Bool = false
 
         init(currentCurrency: String = "USD",
-             rentalState: Loadable<[Rental]> = .none) {
+             rentalState: Loadable<[Rental]> = .none,
+             deleteRentalState: Loadable<Empty> = .none) {
             self.currentCurrency = currentCurrency
             self.rentalState = rentalState
+            self.deleteRentalState = deleteRentalState
         }
     }
 
-    enum Action {
+    enum Action: BindableAction {
         case onViewAppear
         case rentalStateChanged(Loadable<[Rental]>)
+        case deleteRental(Int)
+        case deleteRentalStateChanged(Loadable<Empty>)
         case logout
+        case showAlert
+        case binding(BindingAction<State>)
     }
 
     @Dependency(\.rentalService) var service
@@ -33,6 +43,8 @@ class RentalCore: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case .onViewAppear:
+                state.showAlert = false
+
                 return .run { [currentCurrency = state.currentCurrency] send in
                     await send(.rentalStateChanged(.loading))
 
@@ -58,7 +70,43 @@ class RentalCore: ReducerProtocol {
 
                 return .none
 
+            case let .deleteRental(id):
+                return .run { send in
+                    await send(.deleteRentalStateChanged(.loading))
+
+                    let empty = try await self.service.deleteRental(with: id)
+
+                    await send(.deleteRentalStateChanged(.loaded(empty)))
+                } catch: { error, send in
+                    if let httpError = error as? HTTPError {
+                        if case .unauthorized = httpError {
+                            await send(.logout)
+                        } else {
+                            await send(.deleteRentalStateChanged(.error(httpError)))
+                        }
+                    } else {
+                        await send(.deleteRentalStateChanged(.error(.unexpectedError)))
+                    }
+                }
+
+            case let .deleteRentalStateChanged(deleteRentalState):
+                state.deleteRentalState = deleteRentalState
+
+                if case .loaded = deleteRentalState {
+                    return .send(.onViewAppear)
+                }
+
+                return .none
+
             case .logout:
+                return .none
+
+            case .showAlert:
+                state.showAlert = true
+
+                return .none
+
+            case .binding:
                 return .none
             }
         }

@@ -30,6 +30,11 @@ public class APIClient {
                 if isSuccessStatusCode(httpResponse.statusCode) {
                     print("DATA: \(String(decoding: response.0, as: UTF8.self))")
 
+                    if httpResponse.statusCode == 204,
+                       let empty = Empty() as? C.Response {
+                        return empty
+                    }
+
                     return try JSONDecoder().decode(C.Response.self, from: response.0)
                 } else if httpResponse.statusCode == 401 {
                     guard var token = self.token else {
