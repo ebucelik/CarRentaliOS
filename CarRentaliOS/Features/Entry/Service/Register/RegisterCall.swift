@@ -9,7 +9,7 @@ import Foundation
 
 struct RegisterCall: Call {
     var responseType = RegistrationCustomer.self
-    var httpQuery: String = "users/auth/registration"
+    var httpQuery: String = "customers/auth/registration"
     var httpMethod: HTTPMethod = .POST
     var body: Codable?
 

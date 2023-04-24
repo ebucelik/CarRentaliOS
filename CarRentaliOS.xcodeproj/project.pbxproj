@@ -72,7 +72,6 @@
 		71C78B8E29E9C19F00B08A83 /* CarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B8D29E9C19F00B08A83 /* CarsView.swift */; };
 		71C78B9029E9C1D000B08A83 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B8F29E9C1D000B08A83 /* Car.swift */; };
 		71C78B9229E9C24900B08A83 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9129E9C24900B08A83 /* CarService.swift */; };
-		71C78B9429E9C31600B08A83 /* AllCarsCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9329E9C31600B08A83 /* AllCarsCall.swift */; };
 		71C78B9629E9C38D00B08A83 /* AvailableCarsCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9529E9C38C00B08A83 /* AvailableCarsCall.swift */; };
 		71C78B9829E9C46600B08A83 /* CarsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9729E9C46600B08A83 /* CarsCore.swift */; };
 		71C78B9A29E9C4DA00B08A83 /* DebounceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C78B9929E9C4DA00B08A83 /* DebounceID.swift */; };
@@ -169,7 +168,6 @@
 		71C78B8D29E9C19F00B08A83 /* CarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsView.swift; sourceTree = "<group>"; };
 		71C78B8F29E9C1D000B08A83 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		71C78B9129E9C24900B08A83 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
-		71C78B9329E9C31600B08A83 /* AllCarsCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCarsCall.swift; sourceTree = "<group>"; };
 		71C78B9529E9C38C00B08A83 /* AvailableCarsCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCarsCall.swift; sourceTree = "<group>"; };
 		71C78B9729E9C46600B08A83 /* CarsCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsCore.swift; sourceTree = "<group>"; };
 		71C78B9929E9C4DA00B08A83 /* DebounceID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceID.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				711FC4E129EDB96A001A81DD /* RentCarCall.swift */,
-				71C78B9329E9C31600B08A83 /* AllCarsCall.swift */,
 				71C78B9529E9C38C00B08A83 /* AvailableCarsCall.swift */,
 				7178A33A29ECA47200BEC6C1 /* CurrencyCodeCall.swift */,
 			);
@@ -889,7 +886,6 @@
 				7178A33D29ECA49700BEC6C1 /* CurrencyCode.swift in Sources */,
 				71A4D33529DB567600BB4202 /* AppCore.swift in Sources */,
 				71A4D33F29DB567600BB4202 /* SharedTextView.swift in Sources */,
-				71C78B9429E9C31600B08A83 /* AllCarsCall.swift in Sources */,
 				71A4D33629DB567600BB4202 /* EntryCore.swift in Sources */,
 				7178A33529EC84B500BEC6C1 /* AccessToken.swift in Sources */,
 				7178A33F29ECA4F900BEC6C1 /* CurrencyCodeService.swift in Sources */,

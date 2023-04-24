@@ -25,6 +25,7 @@ struct RentalView: View {
                         }
                     }
                     .navigationTitle("Rentals")
+                    .navigationBarTitleDisplayMode(.inline)
             }
         }
     }
@@ -39,16 +40,47 @@ struct RentalView: View {
                         Text("You don't have any rentals.")
                     } else {
                         ForEach(rentals, id: \.id) { rental in
-                            HStack(alignment: .top) {
-                                Text("CarId: \(rental.carId)")
-                                    .font(.headline)
-                                    .bold()
+                            VStack(alignment: .leading) {
+                                HStack(alignment: .top) {
+                                    VStack {
+                                        Text("\(rental.carUnwrapped().brand)")
+                                            .font(.title2)
+                                            .bold()
+                                            .frame(maxWidth: .infinity, alignment: .leading)
 
-                                VStack {
-                                    Text("From: \(rental.startDay)")
-                                        .frame(maxWidth: .infinity, alignment: .trailing)
-                                    Text("To: \(rental.endDay)")
-                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                        Text("\(rental.carUnwrapped().model)")
+                                            .font(.headline)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                                        Spacer()
+                                            .frame(height: 10)
+
+                                        VStack(spacing: 10) {
+                                            Text("Startday: \(rental.startDay)")
+                                                .font(.caption)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                            Text("Endday: \(rental.startDay)")
+                                                .font(.caption)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                            Text("Total: \(rental.totalCost.toString) \(viewStore.currentCurrency)")
+                                                .font(.caption)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                        }
+                                        .padding()
+                                        .background(AppColor.lightGray)
+                                        .cornerRadius(8)
+                                    }
+
+                                    AsyncImage(url: URL(string: rental.carUnwrapped().imageLink)) { image in
+                                        image
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(maxWidth: 175, maxHeight: 175)
+                                    } placeholder: {
+                                        Color
+                                            .gray
+                                            .frame(maxWidth: 175, maxHeight: 175)
+                                    }
                                 }
                             }
                             .alert("Cancel \(rental.id)",

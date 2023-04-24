@@ -37,7 +37,6 @@ class RentalCore: ReducerProtocol {
 
     @Dependency(\.rentalService) var service
     @Dependency(\.mainScheduler) var mainScheduler
-    @Dependency(\.continuousClock) var clock
 
     var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in
@@ -47,8 +46,6 @@ class RentalCore: ReducerProtocol {
 
                 return .run { [currentCurrency = state.currentCurrency] send in
                     await send(.rentalStateChanged(.loading))
-
-                    try await self.clock.sleep(for: .seconds(1))
 
                     let rentals = try await self.service.getAllRentals(for: currentCurrency)
 

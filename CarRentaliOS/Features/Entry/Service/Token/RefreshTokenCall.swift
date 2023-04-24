@@ -9,7 +9,7 @@ import Foundation
 
 struct RefreshTokenCall: Call {
     var responseType = AccessToken.self
-    var httpQuery: String = "users/auth/refreshtoken"
+    var httpQuery: String = "customers/auth/refreshtoken"
     var httpMethod: HTTPMethod = .POST
     var body: Codable?
 

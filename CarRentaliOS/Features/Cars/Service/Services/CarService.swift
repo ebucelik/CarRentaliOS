@@ -9,8 +9,6 @@ import Foundation
 import ComposableArchitecture
 
 protocol CarServiceProtocol {
-    func getAllCars(currency: String) async throws -> [Car]
-
     func getAvailableCars(currentCurrency: String,
                           chosenCurrency: String,
                           startDate: String,
@@ -18,14 +16,6 @@ protocol CarServiceProtocol {
 }
 
 class CarService: APIClient, CarServiceProtocol {
-    func getAllCars(currency: String) async throws -> [Car] {
-        let allCarsCall = AllCarsCall(
-            parameters: ["currency": currency]
-        )
-
-        return try await start(call: allCarsCall)
-    }
-
     func getAvailableCars(currentCurrency: String,
                           chosenCurrency: String,
                           startDate: String,

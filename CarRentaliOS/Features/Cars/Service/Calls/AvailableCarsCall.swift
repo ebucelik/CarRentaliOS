@@ -9,7 +9,7 @@ import Foundation
 
 struct AvailableCarsCall: Call {
     var responseType = [Car].self
-    var httpQuery: String = "cars/availableCars"
+    var httpQuery: String = "cars"
     var httpMethod: HTTPMethod = .GET
     var parameters: [String : Any]?
 

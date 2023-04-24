@@ -16,5 +16,21 @@ struct Car: Codable, Equatable, Hashable {
     let buildDate: String // "2023-05-22"
     let fuelType: String
     let imageLink: String
-    let totalCosts: Float
+    let totalCosts: Float?
+}
+
+extension Car {
+    static var emptyCar: Car {
+        Car(
+            id: 0,
+            dailyCost: 0.0,
+            brand: "",
+            model: "",
+            hp: "",
+            buildDate: "",
+            fuelType: "",
+            imageLink: "",
+            totalCosts: 0.0
+        )
+    }
 }

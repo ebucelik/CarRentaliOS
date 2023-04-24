@@ -9,7 +9,7 @@ import Foundation
 
 struct LoginCall: Call {
     var responseType: Token.Type = Token.self
-    var httpQuery: String = "users/auth/login"
+    var httpQuery: String = "customers/auth/login"
     var httpMethod: HTTPMethod = .POST
     var body: Codable?
 

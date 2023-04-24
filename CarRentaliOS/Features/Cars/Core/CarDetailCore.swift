@@ -40,7 +40,7 @@ class CarDetailCore: ReducerProtocol {
                 carId: car.id,
                 startDay: startDate,
                 endDay: endDate,
-                totalCost: car.totalCosts,
+                totalCost: car.totalCosts ?? 0.0,
                 currentCurrency: chosenCurrency,
                 email: nil
             )
