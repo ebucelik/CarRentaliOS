@@ -51,7 +51,7 @@ class CarDetailCore: ReducerProtocol {
         }
     }
 
-    enum Action: BindableAction {
+    enum Action: BindableAction, Equatable {
         case rentCar
         case rentCarStateChanged(Loadable<RentCar>)
         case dismissView

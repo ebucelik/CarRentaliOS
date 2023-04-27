@@ -22,4 +22,11 @@ class CurrencyCodeService: APIClient, CurrencyCodeServiceProtocol {
 
 extension CurrencyCodeService: DependencyKey {
     static let liveValue: CurrencyCodeService = CurrencyCodeService()
+    static let testValue: CurrencyCodeService = CurrencyCodeServiceMock()
+}
+
+class CurrencyCodeServiceMock: CurrencyCodeService {
+    override func getCurrencyCodes() async throws -> CurrencyCode {
+        return .mock
+    }
 }

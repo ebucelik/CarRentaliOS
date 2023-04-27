@@ -19,7 +19,6 @@
 		7122E15E29DB41C5002E1D4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E15D29DB41C5002E1D4C /* ViewController.swift */; };
 		7122E16329DB41C6002E1D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7122E16229DB41C6002E1D4C /* Assets.xcassets */; };
 		7122E16629DB41C6002E1D4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7122E16429DB41C6002E1D4C /* LaunchScreen.storyboard */; };
-		7122E17129DB41C6002E1D4C /* CarRentaliOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17029DB41C6002E1D4C /* CarRentaliOSTests.swift */; };
 		7122E17B29DB41C6002E1D4C /* CarRentaliOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */; };
 		7122E17D29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */; };
 		7122E1C629DB436C002E1D4C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7122E1C529DB436C002E1D4C /* ComposableArchitecture */; };
@@ -78,6 +77,7 @@
 		71D42B0A29DB734300C722AC /* libPods-CarRentaliOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D42B0929DB734300C722AC /* libPods-CarRentaliOS.a */; };
 		71D42B0C29DB734A00C722AC /* libPods-CarRentaliOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D42B0B29DB734A00C722AC /* libPods-CarRentaliOS.a */; };
 		71D42B0E29DB73A800C722AC /* ViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D42B0D29DB73A800C722AC /* ViewControllerRepresentable.swift */; };
+		71FF769029FB055700189542 /* CarsCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF768F29FB055700189542 /* CarsCoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +113,6 @@
 		7122E16529DB41C6002E1D4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7122E16729DB41C6002E1D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7122E16C29DB41C6002E1D4C /* CarRentaliOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentaliOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7122E17029DB41C6002E1D4C /* CarRentaliOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSTests.swift; sourceTree = "<group>"; };
 		7122E17629DB41C6002E1D4C /* CarRentaliOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentaliOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7122E17A29DB41C6002E1D4C /* CarRentaliOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITests.swift; sourceTree = "<group>"; };
 		7122E17C29DB41C6002E1D4C /* CarRentaliOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentaliOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -174,6 +173,7 @@
 		71D42B0929DB734300C722AC /* libPods-CarRentaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-CarRentaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D42B0B29DB734A00C722AC /* libPods-CarRentaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-CarRentaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D42B0D29DB73A800C722AC /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		71FF768F29FB055700189542 /* CarsCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsCoreTests.swift; sourceTree = "<group>"; };
 		AE31C4BDA845CC1A721C84AE /* Pods-CarRentaliOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRentaliOS.debug.xcconfig"; path = "Target Support Files/Pods-CarRentaliOS/Pods-CarRentaliOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B9FA279CDE3C22FA0AAA3B45 /* Pods-CarRentaliOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRentaliOS.release.xcconfig"; path = "Target Support Files/Pods-CarRentaliOS/Pods-CarRentaliOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,7 +290,7 @@
 		7122E16F29DB41C6002E1D4C /* CarRentaliOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				7122E17029DB41C6002E1D4C /* CarRentaliOSTests.swift */,
+				71FF768F29FB055700189542 /* CarsCoreTests.swift */,
 			);
 			path = CarRentaliOSTests;
 			sourceTree = "<group>";
@@ -724,6 +724,7 @@
 					};
 					7122E16B29DB41C6002E1D4C = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 						TestTargetID = 7122E15529DB41C5002E1D4C;
 					};
 					7122E17529DB41C6002E1D4C = {
@@ -897,7 +898,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7122E17129DB41C6002E1D4C /* CarRentaliOSTests.swift in Sources */,
+				71FF769029FB055700189542 /* CarsCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1120,6 +1121,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7UZH6B548Y;
@@ -1129,6 +1131,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebucelik.CarRentaliOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarRentaliOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarRentaliOS";
@@ -1140,6 +1143,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7UZH6B548Y;

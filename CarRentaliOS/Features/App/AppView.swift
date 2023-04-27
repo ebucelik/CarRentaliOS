@@ -13,24 +13,26 @@ struct AppView: View {
     let store: StoreOf<AppCore>
 
     var body: some View {
-        WithViewStore(store) { viewStore in
-            NavigationView {
-                HomeView(
-                    store: store.scope(
-                        state: \.homeState,
-                        action: AppCore.Action.home
-                    )
-                )
-                .fullScreenCover(isPresented: viewStore.binding(\.$showEntry), content: {
-                    EntryView(
+        if !_XCTIsTesting {
+            WithViewStore(store) { viewStore in
+                NavigationView {
+                    HomeView(
                         store: store.scope(
-                            state: \.entryState,
-                            action: AppCore.Action.entry
+                            state: \.homeState,
+                            action: AppCore.Action.home
                         )
                     )
-                })
-                .onAppear {
-                    viewStore.send(.checkAccessToken)
+                    .fullScreenCover(isPresented: viewStore.binding(\.$showEntry), content: {
+                        EntryView(
+                            store: store.scope(
+                                state: \.entryState,
+                                action: AppCore.Action.entry
+                            )
+                        )
+                    })
+                    .onAppear {
+                        viewStore.send(.checkAccessToken)
+                    }
                 }
             }
         }

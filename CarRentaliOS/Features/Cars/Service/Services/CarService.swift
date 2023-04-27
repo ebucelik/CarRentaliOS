@@ -35,4 +35,15 @@ class CarService: APIClient, CarServiceProtocol {
 
 extension CarService: DependencyKey {
     static let liveValue: CarService = CarService()
+    static let testValue: CarService = CarServiceMock()
+}
+
+class CarServiceMock: CarService {
+    override func getAvailableCars(
+        currentCurrency: String,
+        chosenCurrency: String,
+        startDate: String,
+        endDate: String) async throws -> [Car] {
+        return [.mock1, .mock2, .mock3]
+    }
 }

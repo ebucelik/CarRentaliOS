@@ -40,7 +40,7 @@ class CarsCore: ReducerProtocol {
         }
     }
 
-    enum Action: BindableAction {
+    enum Action: BindableAction, Equatable {
         case onViewAppear
         case loadCars
         case loadCurrencyCode
