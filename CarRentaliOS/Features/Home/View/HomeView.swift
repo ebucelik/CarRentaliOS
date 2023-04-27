@@ -43,27 +43,6 @@ struct HomeView: View {
                     Label("Map", systemSymbol: .mapFill)
                 }
                 .edgesIgnoringSafeArea(.all)
-
-                Text("Account")
-                    .tabItem {
-                        Label("Account", systemSymbol: .personFill)
-                    }
-                    .onAppear {
-                        viewStore.send(.showToolbar)
-                    }
-                    .onDisappear {
-                        viewStore.send(.showToolbar)
-                    }
-            }
-            .toolbar {
-                if viewStore.showToolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Image(systemSymbol: .rectanglePortraitAndArrowForwardFill)
-                            .onTapGesture {
-                                viewStore.send(.logout)
-                            }
-                    }
-                }
             }
             .onAppear {
                 UITabBar.appearance().backgroundColor = .white

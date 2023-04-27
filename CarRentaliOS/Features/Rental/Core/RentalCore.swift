@@ -13,9 +13,6 @@ class RentalCore: ReducerProtocol {
         var rentalState: Loadable<[Rental]>
         var deleteRentalState: Loadable<Empty>
 
-        @BindingState
-        var showAlert: Bool = false
-
         init(currentCurrency: String = "USD",
              rentalState: Loadable<[Rental]> = .none,
              deleteRentalState: Loadable<Empty> = .none) {
@@ -25,14 +22,12 @@ class RentalCore: ReducerProtocol {
         }
     }
 
-    enum Action: BindableAction {
+    enum Action {
         case onViewAppear
         case rentalStateChanged(Loadable<[Rental]>)
         case deleteRental(Int)
         case deleteRentalStateChanged(Loadable<Empty>)
         case logout
-        case showAlert
-        case binding(BindingAction<State>)
     }
 
     @Dependency(\.rentalService) var service
@@ -42,7 +37,6 @@ class RentalCore: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case .onViewAppear:
-                state.showAlert = false
 
                 return .run { [currentCurrency = state.currentCurrency] send in
                     await send(.rentalStateChanged(.loading))
@@ -68,10 +62,14 @@ class RentalCore: ReducerProtocol {
                 return .none
 
             case let .deleteRental(id):
+                guard case let .loaded(rentals) = state.rentalState else { return .none }
+
+                let rental = rentals[id]
+
                 return .run { send in
                     await send(.deleteRentalStateChanged(.loading))
 
-                    let empty = try await self.service.deleteRental(with: id)
+                    let empty = try await self.service.deleteRental(with: rental.id)
 
                     await send(.deleteRentalStateChanged(.loaded(empty)))
                 } catch: { error, send in
@@ -96,14 +94,6 @@ class RentalCore: ReducerProtocol {
                 return .none
 
             case .logout:
-                return .none
-
-            case .showAlert:
-                state.showAlert = true
-
-                return .none
-
-            case .binding:
                 return .none
             }
         }

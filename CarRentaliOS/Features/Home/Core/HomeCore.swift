@@ -10,28 +10,21 @@ import ComposableArchitecture
 
 class HomeCore: ReducerProtocol {
     struct State: Equatable {
-        @BindingState
-        var showToolbar: Bool = false
-
         var currentCurrency: String = "USD"
 
         var carsState: CarsCore.State = CarsCore.State()
         var rentalState: RentalCore.State = RentalCore.State()
     }
 
-    enum Action: BindableAction {
+    enum Action {
         case logout
-        case showToolbar
         case none
-        case binding(BindingAction<State>)
 
         case carAction(CarsCore.Action)
         case rentalAction(RentalCore.Action)
     }
 
     var body: some ReducerProtocol<State, Action> {
-        BindingReducer()
-        
         Scope(
             state: \.carsState,
             action: /HomeCore.Action.carAction
@@ -54,15 +47,7 @@ class HomeCore: ReducerProtocol {
 
                 return .none
 
-            case .showToolbar:
-                state.showToolbar.toggle()
-
-                return .none
-
             case .none:
-                return .none
-
-            case .binding:
                 return .none
 
             case .carAction(.logout), .rentalAction(.logout):

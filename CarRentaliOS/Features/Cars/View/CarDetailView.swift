@@ -24,6 +24,18 @@ struct CarDetailView: View {
                     dismiss()
                 }
             }
+            .alert(
+                "Rent information",
+                isPresented: viewStore.binding(\.$showAlert)
+            ) {
+                Button(
+                    "Ok",
+                    role: .cancel,
+                    action: { viewStore.send(.dismissView) }
+                )
+            } message: {
+                Text("The car you want to rent was already booked by someone else.")
+            }
         }
     }
 

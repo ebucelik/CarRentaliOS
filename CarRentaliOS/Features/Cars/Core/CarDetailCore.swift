@@ -16,6 +16,9 @@ class CarDetailCore: ReducerProtocol {
         var rentCarState: Loadable<RentCar>
         var rentCar: RentCar
         var dismissView: Bool
+
+        @BindingState
+        var showAlert: Bool = false
  
         var isError: Bool {
             guard case .error = rentCarState else {
@@ -48,67 +51,84 @@ class CarDetailCore: ReducerProtocol {
         }
     }
 
-    enum Action {
+    enum Action: BindableAction {
         case rentCar
         case rentCarStateChanged(Loadable<RentCar>)
         case dismissView
         case viewDismissed
         case logout
+        case showAlert
+        case binding(BindingAction<State>)
     }
 
     @Dependency(\.rentCarService) var service
     @Dependency(\.mainScheduler) var mainScheduler
     @Dependency(\.continuousClock) var clock
 
-    func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        switch action {
-        case .rentCar:
-            return .run { [rentCar = state.rentCar] send in
-                await send(.rentCarStateChanged(.loading))
+    var body: some ReducerProtocol<State, Action> {
 
-                try await self.clock.sleep(for: .seconds(1))
+        BindingReducer()
 
-                let rentCarResponse = try await self.service.rentCar(with: rentCar)
+        Reduce { state, action in
+            switch action {
+            case .rentCar:
+                return .run { [rentCar = state.rentCar] send in
+                    await send(.rentCarStateChanged(.loading))
 
-                await send(.rentCarStateChanged(.loaded(rentCarResponse)))
-            } catch: { error, send in
-                if let httpError = error as? HTTPError {
-                    if case .unauthorized = httpError {
-                        await send(.dismissView)
-                        await send(.logout)
-                    } else {
-                        await send(.rentCarStateChanged(.error(httpError)))
-                    }
-                } else {
-                    await send(.rentCarStateChanged(.error(.unexpectedError)))
-                }
-            }
-
-        case let .rentCarStateChanged(rentCarState):
-            state.rentCarState = rentCarState
-
-            if case .loaded = rentCarState {
-                return .run { send in
                     try await self.clock.sleep(for: .seconds(1))
 
-                    await send(.dismissView)
-                } catch: { _, send in
-                    await send(.dismissView)
+                    let rentCarResponse = try await self.service.rentCar(with: rentCar)
+
+                    await send(.rentCarStateChanged(.loaded(rentCarResponse)))
+                } catch: { error, send in
+                    if let httpError = error as? HTTPError {
+                        if case .unauthorized = httpError {
+                            await send(.dismissView)
+                            await send(.logout)
+                        } else {
+                            await send(.rentCarStateChanged(.error(httpError)))
+                            await send(.showAlert)
+                        }
+                    } else {
+                        await send(.rentCarStateChanged(.error(.unexpectedError)))
+                        await send(.showAlert)
+                    }
                 }
+
+            case let .rentCarStateChanged(rentCarState):
+                state.rentCarState = rentCarState
+
+                if case .loaded = rentCarState {
+                    return .run { send in
+                        try await self.clock.sleep(for: .seconds(1))
+
+                        await send(.dismissView)
+                    } catch: { _, send in
+                        await send(.dismissView)
+                    }
+                }
+
+                return .none
+
+            case .dismissView:
+                state.dismissView = true
+
+                return .send(.viewDismissed)
+
+            case .viewDismissed:
+                return .none
+
+            case .logout:
+                return .none
+
+            case .showAlert:
+                state.showAlert = true
+
+                return .none
+
+            case .binding:
+                return .none
             }
-
-            return .none
-
-        case .dismissView:
-            state.dismissView = true
-
-            return .send(.viewDismissed)
-
-        case .viewDismissed:
-            return .none
-
-        case .logout:
-            return .none
         }
     }
 }

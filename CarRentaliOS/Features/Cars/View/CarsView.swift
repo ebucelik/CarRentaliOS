@@ -69,6 +69,14 @@ struct CarsView: View {
                         viewStore.send(.onViewAppear)
                     }
                 }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Image(systemSymbol: .rectanglePortraitAndArrowForwardFill)
+                            .onTapGesture {
+                                viewStore.send(.logout)
+                            }
+                    }
+                }
             }
         }
     }

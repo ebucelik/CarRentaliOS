@@ -83,14 +83,6 @@ struct RentalView: View {
                                     }
                                 }
                             }
-                            .alert("Cancel \(rental.id)",
-                                   isPresented: viewStore.binding(\.$showAlert),
-                                   presenting: rental) { rental in
-                                Button("Cancel Rental") { viewStore.send(.deleteRental(rental.id)) }
-                                Button("Cancel", role: .cancel) { }
-                            } message: { rental in
-                                Text("Do you really want to cancel your rental with id \(rental.id)?")
-                            }
                         }
                         .onDelete { indexSet in
                             delete(at: indexSet, viewStore)
@@ -116,7 +108,9 @@ struct RentalView: View {
         }
     }
 
-    private func delete(at offsets: IndexSet, _ viewStore: ViewStoreOf<RentalCore>) {
-        viewStore.send(.showAlert)
+    private func delete(at indexSet: IndexSet, _ viewStore: ViewStoreOf<RentalCore>) {
+        for index in indexSet {
+            viewStore.send(.deleteRental(index))
+        }
     }
 }
