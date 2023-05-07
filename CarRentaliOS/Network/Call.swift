@@ -19,7 +19,7 @@ public protocol Call where Self.Response: Codable {
 }
 
 extension Call {
-    var httpScheme: String { "http://localhost:8080/api/v1/" }
+    var httpScheme: String { "http://ec2-3-72-108-183.eu-central-1.compute.amazonaws.com:8080/api/v1/" }
     var parameters: [String : Any]? { nil }
     var body: Codable? { nil }
 }
